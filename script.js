@@ -87,7 +87,7 @@ function initMap() {
         const video = document.getElementById("video");
         video.pause(); // 動画を一時停止
         video.currentTime = 0; // 動画の再生位置をリセット
-    });
+    });  
 }
 
 // スクリプトの読み込みが終わったらinitMapを実行

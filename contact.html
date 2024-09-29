@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ/お申込みフォーム</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        input, textarea {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: border-color 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .success-message {
+            color: green;
+            text-align: center;
+            margin-top: 20px;
+            display: none; /* 初期状態では非表示 */
+        }
+
+        .required {
+            color: red; /* 必須マークを赤にする */
+        }
+
+        .email-note {
+            font-size: 12px; /* フォントサイズを小さく */
+            font-weight: bold; /* 太文字 */
+            color: #555; /* 色を設定 */
+            margin-bottom: 20px; /* 下にスペースを追加 */
+        }
+        .error-message {
+            color: red;
+            margin-top: 10px;
+            display: none; /* 初期状態では非表示 */
+            font-size: small;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="contact-container">
+        <h1>お問い合わせ/お申込みフォーム</h1>
+        <form id="contactForm">
+            <label for="name">お名前 <span class="required">※</span></label>
+            <input type="text" id="name" name="name" required>
+            <label for="name">年齢(御差支えが無ければ)</label>
+            <input type="text" id="age" name="age">
+
+            <label for="email">メールアドレス <span class="required">※</span></label>
+            <div class="error-message" id="errorMessage">メールアドレスが一致しません。</div>
+            <input type="email" id="email" name="email" required>
+            <span class="email-note">
+                フォームが無事に送信されましたらこのメールに弊社からフォーム送信完了メールが届きます。もし間違ったメールをご入力されますとこちらにもお客様にも送信完了メールが送られません。どうぞ正しいEmailのご入力をお願いいたします。<br>
+                もしお客様に送信完了メールが届かない場合はメールアドレスの入力が間違っている可能性がございます。2，3日しても、弊社から連絡がない場合は再度ご連絡をいただけますようお願いいたします。迷惑メールに入ることもございますので、そちらもご確認いただけますようお願いいたします。携帯メールでは弊社からのメールが送信できないこともございますので、携帯メール以外のメールがございます場合は他のEmailまたはラインIDをお知らせください。
+            </span>
+            <label for="email">Email入力間違い防止のため再度ご記入をお願い致します。<span class="required">※</span></label>
+            <input type="email" id="emailConfirm" name="email" required>
+            <label for="tourType">お申込みまたはお問い合わせ<span class="required">※</span></label>
+            <select id="tourType" name="tourType" required>
+                <option value="">選択してください</option>
+                <option value="tour_order">ツアー申込</option>
+                <option value="charter_order">チャーター申し込み</option>
+                <option value="transfer">空港送迎</option>
+                <option value="inquiry">問い合わせ</option>
+            </select>
+
+            <label for="participants">その他のご参加者</label>
+            <textarea id="participants" name="participants" rows="5"></textarea>
+
+            <label for="total">参加者総合計人数（お申込者様も含む）</label>
+            <input type="text" id="total" name="total">
+
+            <label for="tourDate1">ツアー希望日 1<span class="required">※</span></label>
+            <input type="date" id="tourDate1" name="tourDate1" required>
+
+            <label for="tour_detail_1">ツアー名やチャーターサービス、空港送迎のご希望詳細をご記入ください。</label>
+            <textarea id="tour_detail_1" name="tour_detail_1" rows="5"></textarea>
+
+            <label for="tourDate2">ツアー希望日 2</label>
+            <input type="date" id="tourDate2" name="tourDate2">
+
+            <label for="tour_detail_2">ツアー名やチャーターサービス、空港送迎のご希望詳細をご記入ください。</label>
+            <textarea id="tour_detail_2" name="tour_detail_2" rows="5"></textarea>
+
+            <label for="tourDate3">ツアー希望日 3</label>
+            <input type="date" id="tourDate3" name="tourDate3">
+
+            <label for="tour_detail_3">ツアー名やチャーターサービス、空港送迎のご希望詳細をご記入ください。</label>
+            <textarea id="tour_detail_3" name="tour_detail_3" rows="5"></textarea>
+
+            <label for="tourDate4">ツアー希望日 4</label>
+            <input type="date" id="tourDate4" name="tourDate4">
+
+            <label for="tour_detail_4">ツアー名やチャーターサービス、空港送迎のご希望詳細をご記入ください。</label>
+            <textarea id="tour_detail_4" name="tour_detail_4" rows="5"></textarea>
+
+            <label for="tourDate5">ツアー希望日 5</label>
+            <input type="date" id="tourDate5" name="tourDate5">
+
+            <label for="tour_detail_5">ツアー名やチャーターサービス、空港送迎のご希望詳細をご記入ください。</label>
+            <textarea id="tour_detail_5" name="tour_detail_5" rows="5"></textarea>
+
+            <label for="message">アメリカ国内で連絡が取れる携帯、Line ID、スカイプID、SNSの連絡先等</label>
+            <textarea id="message" name="message" rows="5"></textarea>
+
+            <label for="accommodation_detail">ご滞在ホテル名、住所、電話番号　<br>お決まりでない場合は未定とご記入をお願いいたします。<span class="required">※</span></label>
+            <textarea id="accommodation_detail" name="accommodation_detail" rows="5" required></textarea>
+
+            <label for="length_stay">滞在期間</label>
+            <input type="text" id="length_stay" name="length_stay">
+
+            <label for="airline">ご利用の往復の飛行機便名（到着、ご出発予定時間）　 <br>*空港送迎または空港から空港までのチャーターの場合は必ずご記入ください。</label>
+            <textarea id="airline" name="airline" rows="5"></textarea>
+
+            <label for="prefecture">日本のお住いの都道府県</label>
+            <input type="text" id="prefecture" name="prefecture">
+
+            <label for="reason">弊社を選んでいただきました理由</label>
+            <textarea id="reason" name="reason" rows="5"></textarea>
+
+            <label for="tour_name">ご利用のツアー会社</label>
+            <textarea id="tour_name" name="tour_name" rows="5"></textarea>
+
+            <label for="other_order">その他ご要望など</label>
+            <textarea id="other_order" name="other_order" rows="5"></textarea>
+
+            <button type="submit">送信する</button>
+        </form>
+        <div class="success-message" id="successMessage">メッセージが送信されました！<br>弊社からの連絡をお待ちください</div>
+    </div>
+
+    <script>
+ const form = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+        const errorMessage = document.getElementById('errorMessage');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // フォームのデフォルトの送信を防ぐ
+
+            const email = document.getElementById('email').value;
+            const emailConfirm = document.getElementById('emailConfirm').value;
+
+            if (email !== emailConfirm) {
+                errorMessage.style.display = 'block'; // エラーメッセージを表示
+                return; // フォームの送信を中止
+            } else {
+                errorMessage.style.display = 'none'; // エラーメッセージを非表示
+            }
+
+            form.style.display = 'none'; // フォームを非表示
+            successMessage.style.display = 'block'; // 成功メッセージを表示
+            form.reset(); // フォームをリセット
+        });
+    </script>
+
+</body>
+</html>

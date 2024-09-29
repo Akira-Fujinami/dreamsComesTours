@@ -220,12 +220,6 @@ tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-/* マウスオーバー時の背景色 */
-tr:hover, /* 行全体 */
-tr:hover td { /* 各セル */
-    background-color: #b3e0ff; /* マウスオーバー時の背景色を水色に */
-}
-
 .tour-image {
     width: 100%; /* 画像の幅を調整 */
     height: auto;
@@ -241,7 +235,7 @@ tr:hover td { /* 各セル */
     position: absolute; /* 動画を固定 */
     padding: 20px;
     left: 38%;
-    top: 220%;
+    top: 235%;
     border-radius: 10px;
     display: none; /* 初期状態では非表示 */
     z-index: 1000; /* マップより前に表示 */
@@ -255,4 +249,15 @@ tr:hover td { /* 各セル */
     top: 20px;
     right: 20px;
     cursor: pointer;
+}
+.map-title {
+    font-size: 24px; /* フォントサイズ */
+    margin: 10px 0; /* 上下のマージン */
+    color: #333; /* 文字色 */
+    position: relative; /* マップの上に位置を調整するため */
+    z-index: 1001; /* マップより前に表示 */
+}
+.notice {
+    color: red; /* 赤文字 */
+    margin: 10px 0; /* 上下のマージン */
 }
