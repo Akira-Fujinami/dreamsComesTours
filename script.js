@@ -51,3 +51,45 @@ setTimeout(function() {
     currentBackground.style.opacity = 0; // 現在の背景をフェードアウト
     newBackground.style.opacity = 1; // 新しい背景をフェードイン
 }, 3000);
+
+// Google Mapsの初期化
+function initMap() {
+    // マップの中心を設定（例: ロサンゼルス）
+    const losAngeles = { lat: 34.0522, lng: -118.2437 };
+
+    // マップを作成
+    const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 11, // 拡大するための数値を設定
+        center: losAngeles,
+    });
+
+
+    // 固定ピンの位置を設定
+    const markerPosition = { lat: 34.0522, lng: -118.2437 }; // ロサンゼルスの座標
+
+    // マーカーを作成
+    const marker = new google.maps.Marker({
+        position: markerPosition,
+        map: map,
+        title: "ロサンゼルスのピン", // ピンのタイトル
+        draggable: false, // ユーザーによる移動を無効にする
+    });
+
+    marker.addListener("click", function() {
+        const videoContainer = document.getElementById("videoContainer");
+        videoContainer.style.display = "block"; // 動画を表示
+        const video = document.getElementById("video");
+        video.play(); // 動画を再生
+    });
+    document.getElementById("closeButton").addEventListener("click", function() {
+        const videoContainer = document.getElementById("videoContainer");
+        videoContainer.style.display = "none"; // 動画コンテナを非表示
+        const video = document.getElementById("video");
+        video.pause(); // 動画を一時停止
+        video.currentTime = 0; // 動画の再生位置をリセット
+    });
+}
+
+// スクリプトの読み込みが終わったらinitMapを実行
+window.initMap = initMap;
+

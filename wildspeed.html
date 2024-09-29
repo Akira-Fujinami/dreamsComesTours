@@ -1,1 +1,72 @@
-<div>『ワイルド・スピード』ロケ地ツアー</div>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>映画『ワイルド・スピード』ロケ地巡りツアー</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+        .tour-details {
+            max-width: 800px; /* 最大幅を設定 */
+            margin: 20px auto; /* 自動マージンで中央揃え */
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .wildspeed-image {
+            width: 100%; /* 画像の幅を100%に設定 */
+            height: auto;
+            border-radius: 5px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            line-height: 1.6; /* 行間を調整して読みやすく */
+        }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbd7KPcBDapOtTT1oPZ2jua2LbEsVt8cg&callback=initMap" async defer></script>
+</head>
+<body>
+
+    <!-- ヘッダー -->
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="tourList.html" class="tours">Tours</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="tour-details">
+        <h1>映画『ワイルド・スピード』ロケ地巡りツアー</h1>
+        <img src="ワイルドスピード.png" alt="ワイルドスピードのロケ地" class="wildspeed-image">
+        <p>
+            映画『ワイルド・スピード』シリーズで世界的に有名な、カリフォルニア出身のハリウッド俳優ポール・ウォーカーさんが亡くなったのは2013年11月不慮の事故で天国へと旅立ちました。ウォーカーさんは地元ロサンゼルスのグレンデール出身で、映画『ワイルド・スピード』や『アクション・マシン』などのハリウッド映画に多数出演し、日本でも人気の高い俳優さんでした。性格もとてもよく、事故で亡くなったのも慈善事業をしていた最中でした。ポール・ウォーカーさんは皮肉にも、まさに映画のような事態でまだ40歳という若さでこの世を去りました。このツアーではそんな素晴らしい俳優、ポール・ウォーカーさんを追悼して、『ワイルド・スピード』のロケ地や彼の思い出の地にご案内いたします。
+        </p>
+        <p>
+            また、2015年4月には待望のワイルドスピード7、スカイミッションが日米で公開されます。その最新トレーラーをご覧ください。ツアーでは、ギャスタたちがサンゼルスのダウンタウンに向かって立っている場所にもご案内いたします。
+        </p>
+
+        <div id="map" style="height: 400px; width: 100%;"></div>
+
+        <!-- 動画のコンテナ -->
+        <div class="video-container" id="videoContainer" style="display:none;">
+            <video id="video" controls>
+                <source src="wildspeed_trailer.mp4" type="video/mp4"> <!-- ここに動画のパスを指定 -->
+                お使いのブラウザでは動画が再生できません。
+            </video>
+            <button id="closeButton" class="close-button">✖</button>
+        </div>
+                
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

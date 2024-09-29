@@ -16,6 +16,8 @@ nav a {
     color: white;
     text-decoration: none;
     margin: 0 15px;
+    padding: 5px; /* パディングを追加してクリック領域を大きくする */
+    transition: background-color 0.3s; /* 背景色の変更にアニメーションを追加 */
 }
 
 nav a:hover {
@@ -166,4 +168,91 @@ body {
 
 .autocomplete-active {
     background-color: #007bff;
+}
+
+.tour-image {
+    position: absolute;
+    top: 110%; /* タイトルの下に表示 */
+    left: 0;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    opacity: 0; /* 初期状態は非表示 */
+    transition: opacity 0.5s ease-in-out; /* フェードインのアニメーション */
+    z-index: 10;
+}
+
+h2:hover + .tour-image {
+    opacity: 1; /* マウスオーバー時に表示 */
+}
+
+.tour-list-container {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px; /* テーブルの最大幅を設定 */
+}
+
+h2 {
+    text-align: left;
+    color: #333;
+    margin-bottom: 10px;
+    border-bottom: 2px solid lightblue; /* 下に線を追加 */
+    padding-bottom: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    transition: background-color 0.3s;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* マウスオーバー時の背景色 */
+tr:hover, /* 行全体 */
+tr:hover td { /* 各セル */
+    background-color: #b3e0ff; /* マウスオーバー時の背景色を水色に */
+}
+
+.tour-image {
+    width: 100%; /* 画像の幅を調整 */
+    height: auto;
+    border-radius: 5px;
+}
+#map {
+    height: 400px; /* 地図の高さ */
+    width: 100%; /* 幅を100%に */
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.video-container {
+    position: absolute; /* 動画を固定 */
+    padding: 20px;
+    left: 38%;
+    top: 220%;
+    border-radius: 10px;
+    display: none; /* 初期状態では非表示 */
+    z-index: 1000; /* マップより前に表示 */
+}
+.close-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
 }
