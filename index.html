@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dreams Come Tours</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ヘッダー -->
+    <header>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#tours">Tours</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- 画像をそのまま表示 -->
+    <img src="ハリウッドサイン.png" alt="Tour Image" id="background-image" class="full-screen-image">
+    <img src="ロサンゼルス背景.png" alt="New Background" id="new-background" class="full-screen-image" style="opacity: 0;">
+
+    <!-- テキストコンテナ（モットーとタイトル） -->
+    <div class="text-container">
+        <!-- モットー -->
+        <div class="motto">
+            あなたの夢を実現します
+        </div>
+
+        <!-- メインコンテンツ（文字を上に配置） -->
+        <div class="animate-text">
+            <span class="blue">D</span>REAMS<span class="letter-c">C</span>OME<span class="blue">T</span>OURS
+        </div>
+
+        <!-- 検索ボックス -->
+        <div class="search-container">
+            <div class="search-title">ロサンゼルスのプライベートツアー</div>
+
+            <!-- オートコンプリート対応の検索ボックス -->
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="ツアー検索">
+                <button><img src="虫眼鏡の無料アイコン8.png" alt="Search" width="20"></button>
+                <div id="autocomplete-list" class="autocomplete-items"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script> 
+
+</body> 
+</html>

@@ -1,0 +1,169 @@
+
+/* ヘッダーのスタイル */
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+body {
+    padding-top: 60px;
+    margin: 0;
+}
+
+.full-screen-image {
+    position: fixed;
+    top: 55px;
+    width: 100%;
+    height: calc(100vh - 55px);
+    object-fit: cover;
+    z-index: 1;
+    opacity: 1; /* 初期オパシティ */
+    transition: opacity 2s ease-in-out;
+}
+
+.text-container {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 10;
+    color: white;
+}
+
+.motto {
+    font-size: 20px;
+    margin-top: 10px;
+    opacity: 0;
+    animation: fadeInMotto 3s forwards;
+}
+
+@keyframes fadeInMotto {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-text {
+    font-size: 48px;
+    font-weight: bold;
+    opacity: 0;
+    animation: fadeInText 3s forwards;
+}
+
+@keyframes fadeInText {
+    0% { opacity: 0; transform: translateY(-50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.blue { color: lightblue; }
+
+.letter-c {
+    color: lightblue;
+    position: relative;
+    display: inline-block;
+}
+
+.letter-c::before {
+    content: "★";
+    position: absolute;
+    color: red;
+    font-size: 0.7em;
+    top: 0.25em;
+    left: 0.1em;
+    width: 100%;
+    text-align: center;
+}
+
+.search-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    padding: 10px;
+    border: 2px solid #e0e0e0;
+    width: 100%;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 50px;
+    flex: 1;
+}
+
+.search-box button {
+    background-color: white;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.search-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 500px;
+    z-index: 20;
+    position: relative;
+    margin-top: 30px;
+}
+
+.search-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* カスタムオートコンプリートリストのスタイル */
+.autocomplete-items {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    color: black;
+    border: 1px solid #d4d4d4;
+    border-radius: 50px;
+    z-index: 99;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #d4d4d4;
+}
+
+.autocomplete-items div:hover {
+    background-color: #e9e9e9;
+    border-radius: 50px;
+}
+
+.autocomplete-active {
+    background-color: #007bff;
+}
