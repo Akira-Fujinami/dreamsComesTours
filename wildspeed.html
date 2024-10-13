@@ -29,6 +29,38 @@
         p {
             line-height: 1.6; /* 行間を調整して読みやすく */
         }
+
+        .recommendation-list {
+            list-style-type: none; /* デフォルトのリストスタイルを無効に */
+            padding: 0; /* パディングをリセット */
+            display: flex; /* フレックスボックスを使用 */
+            justify-content: space-around; /* 項目の間隔を均等に */
+            margin-top: 10px; /* 上部のマージンを追加 */
+        }
+
+        .recommendation-list li {
+            margin: 0 10px; /* 各項目の間隔を設定 */
+        }
+
+        .recommendation-list a {
+            text-decoration: none; /* リンクの下線を消す */
+            color: #007bff; /* リンクの色 */
+        }
+
+        .recommendation-list a:hover {
+            text-decoration: underline; /* ホバー時に下線を表示 */
+        }
+
+        .recommendation-item {
+            margin-bottom: 20px; /* 各アイテムの間隔を設定 */
+        }
+
+        .recommendation-item img {
+            margin-bottom: 10px; /* 画像の下にスペースを追加 */
+            border-radius: 5px; /* 角を丸くする */
+        }
+
+
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbd7KPcBDapOtTT1oPZ2jua2LbEsVt8cg&callback=initMap" async defer></script>
 </head>
@@ -120,6 +152,40 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
+
+        <div class="recommendations">
+            <h2>他のお勧めロケ地ツアー</h2>
+        
+            <div class="recommendation-item">
+                <img src="terminator_image.jpg" alt="ターミネーターのロケ地" class="recommendation-image" style="width: 100%; height: auto; border-radius: 5px;">
+                <p><a href="hollywoodTour.html">『ターミネーター』</a></p>
+            </div>
+        
+            <div class="recommendation-item">
+                <img src="back_to_the_future_image.jpg" alt="バックトゥザフューチャーのロケ地" class="recommendation-image" style="width: 100%; height: auto; border-radius: 5px;">
+                <p><a href="beachTour.html">『バックトゥザフューチャー』</a></p>
+            </div>
+        
+            <div class="recommendation-item">
+                <img src="top_gun_image.jpg" alt="トップガンのロケ地" class="recommendation-image" style="width: 100%; height: auto; border-radius: 5px;">
+                <p><a href="nightTour.html">『トップガン』</a></p>
+            </div>
+        
+            <div class="recommendation-item">
+                <img src="police_academy_image.jpg" alt="ポリスアカデミーのロケ地" class="recommendation-image" style="width: 100%; height: auto; border-radius: 5px;">
+                <p><a href="charterService.html">『ポリスアカデミー』</a></p>
+            </div>
+        </div>
+               
+
+        <div>
+            <h2>お申し込み</h2>
+            <p>お申し込みは<a href="contact.html">こちら</a>からお願いいたします。</p>
+            <p>お得な情報はlineの公式アカウントからご確認できます</p>
+            <a href="https://www.instagram.com/kazimai2010/?locale=ja_JP" target="_blank">
+                <img src="インスタグラムのアイコン.png" alt="Instagram" style="width: 50px; height: 50px;">
+            </a>
         </div>
                 
     </div>

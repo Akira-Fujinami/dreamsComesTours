@@ -52,44 +52,149 @@ setTimeout(function() {
     newBackground.style.opacity = 1; // 新しい背景をフェードイン
 }, 3000);
 
-// Google Mapsの初期化
 function initMap() {
     // マップの中心を設定（例: ロサンゼルス）
     const losAngeles = { lat: 34.0522, lng: -118.2437 };
 
     // マップを作成
     const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 11, // 拡大するための数値を設定
+        zoom: 10, // 拡大するための数値を設定
         center: losAngeles,
     });
 
+    // ドジャースタジアムの位置を設定
+    const dodgersStadiumPosition = { lat: 34.0739, lng: -118.2406 }; // ドジャースタジアムの座標
 
-    // 固定ピンの位置を設定
-    const markerPosition = { lat: 34.0522, lng: -118.2437 }; // ロサンゼルスの座標
-
-    // マーカーを作成
-    const marker = new google.maps.Marker({
-        position: markerPosition,
+    // ドジャースタジアムのマーカーを作成
+    const dodgersMarker = new google.maps.Marker({
+        position: dodgersStadiumPosition,
         map: map,
-        title: "ロサンゼルスのピン", // ピンのタイトル
+        title: "ドジャースタジアム", // ピンのタイトル
         draggable: false, // ユーザーによる移動を無効にする
     });
 
-    marker.addListener("click", function() {
+    // InfoWindowを作成
+    const infoWindow = new google.maps.InfoWindow({
+        content: `
+            <div style="text-align: center;">
+                <strong>ドジャーススタジアムのギフトショップ</strong><br>
+                <img src="ドジャースタジアムのギフトショップ.png" alt="ドジャーススタジアムのギフトショップ" style="width: 200px; height: auto; border-radius: 5px;"><br>
+            </div>
+        `,
+    });
+
+    // ドジャースタジアムのマーカーにクリックリスナーを追加
+    dodgersMarker.addListener("click", function() {
+        infoWindow.open(map, dodgersMarker); // マップ上にInfoWindowを表示
         const videoContainer = document.getElementById("videoContainer");
         videoContainer.style.display = "block"; // 動画を表示
         const video = document.getElementById("video");
         video.play(); // 動画を再生
     });
-    document.getElementById("closeButton").addEventListener("click", function() {
-        const videoContainer = document.getElementById("videoContainer");
-        videoContainer.style.display = "none"; // 動画コンテナを非表示
-        const video = document.getElementById("video");
-        video.pause(); // 動画を一時停止
-        video.currentTime = 0; // 動画の再生位置をリセット
-    });  
+
+    // 大谷翔平の壁画の位置を設定
+    const otaniMuralsPosition = { lat: 34.0406, lng: -118.2567 };// ここを壁画の実際の座標に変更
+
+    // 大谷翔平の壁画のマーカーを作成
+    const otaniMarker = new google.maps.Marker({
+        position: otaniMuralsPosition,
+        map: map,
+        title: "大谷翔平の壁画", // ピンのタイトル
+        draggable: false, // ユーザーによる移動を無効にする
+    });
+
+    // InfoWindowを作成
+    const otaniInfoWindow = new google.maps.InfoWindow({
+        content: `
+            <div style="text-align: center;">
+                <strong>大谷翔平の壁画</strong><br>
+                <img src="大谷翔平.png" alt="大谷翔平の壁画" style="width: 200px; height: auto; border-radius: 5px;"><br>
+            </div>
+        `,
+    });
+
+    // 大谷翔平の壁画のマーカーにクリックリスナーを追加
+    otaniMarker.addListener("click", function() {
+        otaniInfoWindow.open(map, otaniMarker); // マップ上にInfoWindowを表示
+    });
+
+    // 3232 Manhattan Aveの位置を設定
+    const manhattanAvePosition = { lat: 33.8651, lng: -118.4004 }; // 3232 Manhattan Aveの座標
+
+    // 3232 Manhattan Aveのマーカーを作成
+    const manhattanAveMarker = new google.maps.Marker({
+        position: manhattanAvePosition,
+        map: map,
+        title: "3232 Manhattan Ave", // ピンのタイトル
+        draggable: false, // ユーザーによる移動を無効にする
+    });
+
+    // InfoWindowを作成
+    const manhattanAveInfoWindow = new google.maps.InfoWindow({
+        content: `
+            <div style="text-align: center;">
+                <strong>ハモサビーチの酒屋さんの大谷壁画</strong><br>
+                <img src="ハモサビーチにある大谷翔平の壁画.png" alt="3232 Manhattan Ave" style="width: 200px; height: auto; border-radius: 5px;"><br>
+                ロサンゼルス空港の南にあるハモサビーチの酒屋さんの<br>壁画に描かれた大谷翔平選手とムーキー・ベッツ選手の壁画。
+            </div>
+        `,
+    });
+
+    // 3232 Manhattan Aveのマーカーにクリックリスナーを追加
+    manhattanAveMarker.addListener("click", function() {
+        manhattanAveInfoWindow.open(map, manhattanAveMarker); // InfoWindowを開く
+    });
+
+
+    const firstStreetPosition = { lat: 34.0450, lng: -118.2440 }; // 328 1st Stの座標
+
+    // 328 1st Stのマーカーを作成
+    const firstStreetMarker = new google.maps.Marker({
+        position: firstStreetPosition,
+        map: map,
+        title: "328 1st St", // ピンのタイトル
+        draggable: false, // ユーザーによる移動を無効にする
+    });
+
+    // InfoWindowを作成
+    const firstStreetInfoWindow = new google.maps.InfoWindow({
+        content: `
+            <div style="text-align: center;">
+                <strong>リトル東京の大谷翔平の壁画</strong><br>
+                <img src="リトル東京の大谷翔平の壁画.png" alt="リトル東京の大谷翔平の壁画" style="width: 200px; height: auto; border-radius: 5px;"><br>
+            </div>
+        `,
+    });
+
+    // 328 1st Stのマーカーにクリックリスナーを追加
+    firstStreetMarker.addListener("click", function() {
+        firstStreetInfoWindow.open(map, firstStreetMarker); // InfoWindowを開く
+    });
+
+    const cityHallPosition = { lat: 34.0522, lng: -118.2437 }; // 市役所の座標
+    // ロサンゼルス市役所のマーカーを作成
+    const cityHallMarker = new google.maps.Marker({
+        position: cityHallPosition,
+        map: map,
+        title: "ロサンゼルス市役所",
+        draggable: false,
+    });
+
+    // ロサンゼルス市役所のInfoWindowを作成
+    const cityHallInfoWindow = new google.maps.InfoWindow({
+        content: `
+            <div style="text-align: center;">
+                <strong>ロサンゼルス市役所</strong><br>
+                <img src="ロサンゼルス市役所.png" alt="ロサンゼルス市役所" style="width: 200px; height: auto; border-radius: 5px;"><br>
+                5月17日が大谷翔平選手の日に制定されたロサンゼルス市役所。
+            </div>
+        `,
+    });
+    // ロサンゼルス市役所のマーカーにクリックリスナーを追加
+    cityHallMarker.addListener("click", function() {
+        cityHallInfoWindow.open(map, cityHallMarker); // InfoWindowを開く
+    });
 }
 
 // スクリプトの読み込みが終わったらinitMapを実行
 window.initMap = initMap;
-

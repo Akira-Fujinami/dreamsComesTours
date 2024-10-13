@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>映画『ワイルド・スピード』ロケ地巡りツアー</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .tour-details {
+            max-width: 800px; /* 最大幅を設定 */
+            margin: 20px auto; /* 自動マージンで中央揃え */
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .tour-header {
+            display: flex; /* フレックスボックスを有効に */
+            align-items: center; /* 縦方向のセンタリング */
+            justify-content: center; /* 水平方向のセンタリング */
+            text-align: center; /* テキストを中央揃え */
+        }
+
+
+        .baseball-image {
+            width: 60px; /* アイコンのサイズを指定 */
+            height: 60px; /* アイコンのサイズを指定 */
+            margin-left: 10px; /* タイトルとの間隔を設定 */
+        }
+
+        .dogers-image {
+            width: 100%; /* アイコンのサイズを指定 */
+            height: auto; /* アイコンのサイズを指定 */
+            border-radius: 5px; /* 角を丸くする */
+        }
+
+        .arrow {
+            cursor: pointer; /* カーソルをポインターに変更 */
+            font-size: 30px; /* 矢印のサイズ */
+            font-weight: bold; /* 太文字にする */
+            margin: 0 20px; /* 左右にマージン */
+            user-select: none; /* 選択できないようにする */
+            vertical-align: middle; /* 縦位置を中央に調整 */
+        }
+
+        h1 {
+            color: #333;
+            text-shadow: 2px 2px 4px rgba(0, 0, 255, 0.5);
+        }
+
+        p {
+            line-height: 1.6; /* 行間を調整して読みやすく */
+        }
+
+        .notice {
+            background-color: #e0f7fa; /* 背景色を淡い水色に */
+            padding: 15px; /* パディングを増やす */
+            border: 2px solid #007bff; /* 周りに青いボーダーを追加 */
+            border-radius: 5px; /* 角を丸くする */
+            font-size: 16px; /* フォントサイズを少し大きく */
+            font-weight: bold; /* 太文字にする */
+            margin: 20px 0; /* 上下にマージンを追加 */
+            text-align: left; /* 左揃え */
+        }
+
+        .image-title {
+            text-align: center; /* 中央揃え */
+            font-weight: bold; /* 太文字 */
+            margin: 5px 0; /* 上下にマージンを追加 */
+            font-size: 18px; /* フォントサイズを大きく */
+            color: #333; /* 色を設定 */
+            text-shadow: 2px 2px 4px rgba(0, 0, 255, 0.5);
+        }
+    </style>
+    <script>
+        let currentImageIndex = 0; // 現在の画像インデックス
+        const images = [
+            "ドジャース観戦ツアー.png", // 画像のパスを指定
+            "ドジャースタジアムのギフトショップ.png", // 追加の画像
+            "試合観戦.png"  // 追加の画像
+        ];
+
+        function updateImage() {
+            const imageElement = document.getElementById("dogersImage");
+            imageElement.src = images[currentImageIndex];
+            const titleElement = document.getElementById("imageTitle");
+            titleElement.innerText = imageTitles[currentImageIndex]; // タイトルを更新
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length; // 次の画像に移る
+            updateImage();
+        }
+
+        function previousImage() {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length; // 前の画像に移る
+            updateImage();
+        }
+
+        const imageTitles = [
+            "ドジャース観戦ツアー", // 画像1のタイトル
+            "ドジャースタジアムのギフトショップ", // 画像2のタイトル
+            "試合観戦"  // 画像3のタイトル
+        ];
+    </script>
+</head>
+<body>
+
+    <!-- ヘッダー -->
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="tourList.html" class="tours">Tours</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="tour-details">
+        <div class="tour-header">
+            <h1>ロサンゼルス・ドジャース<br>大谷翔平選手観戦ツアー</h1>
+            <img src="野球アイコン.png" alt="野球のアイコン" class="baseball-image" style="width: 50px; height: 50px;">
+        </div>
+        <div style="text-align: center;">
+            <img id="dogersImage" src="ドジャース観戦ツアー.png" alt="ドジャース観戦ツアー" class="dogers-image">
+            <br>
+            <div class="image-title" id="imageTitle">ドジャース観戦ツアー</div>
+            <span class="arrow" onclick="previousImage()">&lt;</span>
+            <span class="arrow" onclick="nextImage()">&gt;</span>
+        </div>
+
+        <p>
+            今年もメジャーリーグのシーズンが始まりました！！今年も沢山の日本人メジャーリーガーの活躍が期待されます。<br>ドリームズ・カム・ツアーズでは、そんな日本人メジャーリーガーを応援しに行くツアーを催行いたしております。元日本人メジャーリーガー達の送迎もさせて頂きました日本人ツアーガイドがその時のエピソードや球場で楽しくメジャーリーグの試合を観戦できるようなお話を交えて親切丁寧にご案内させて頂きます。
+        </p>
+        <p class="notice">➀お住まいのホテルまでお向かいにあがります
+            <br>➁元日本人メジャーリーガーの送迎サービスの経験がある、ベテランツアーガイドがお得な情報をご説明いたします。
+            <br>➂サインの貰えるコツ、無料缶バッチが貰えたり、AR(拡張現実)で大谷翔平選手や山本由伸選手と写真の撮れる方法も教えます！！
+        </p>
+
+        <div class="recommendations">
+            <h2>他のお勧めロケ地ツアー</h2>
+        
+            <div class="recommendation-item">
+                <img src="ドジャースタジアムツアー2.png" alt="ドジャースタジアムツアー" class="recommendation-image" style="width: 23%; height: auto; border-radius: 5px;">
+                <p><a href="doger_studium.html">ドジャースタジアムツアー</a></p>
+            </div>
+        </div>
+               
+        <div>
+            <h2>お申し込み・お問い合わせ</h2>
+            <p>お申し込み・お問い合わせは<a href="contact.html">こちら</a>からお願いいたします。</p>
+            <p>お得な情報はlineの公式アカウントからご確認できます</p>
+            <a href="https://www.instagram.com/kazimai2010/?locale=ja_JP" target="_blank">
+                <img src="インスタグラムのアイコン.png" alt="Instagram" style="width: 50px; height: 50px;">
+            </a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

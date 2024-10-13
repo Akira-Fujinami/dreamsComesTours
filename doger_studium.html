@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>映画『ワイルド・スピード』ロケ地巡りツアー</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .tour-details {
+            max-width: 800px; /* 最大幅を設定 */
+            margin: 20px auto; /* 自動マージンで中央揃え */
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .tour-header {
+            display: flex; /* フレックスボックスを有効に */
+            align-items: center; /* 縦方向のセンタリング */
+            justify-content: center; /* 水平方向のセンタリング */
+            text-align: center; /* テキストを中央揃え */
+        }
+
+
+        .baseball-image {
+            width: 60px; /* アイコンのサイズを指定 */
+            height: 60px; /* アイコンのサイズを指定 */
+            margin-left: 10px; /* タイトルとの間隔を設定 */
+        }
+
+        .dogers-image {
+            width: 100%; /* アイコンのサイズを指定 */
+            height: auto; /* アイコンのサイズを指定 */
+            border-radius: 5px; /* 角を丸くする */
+        }
+
+        .arrow {
+            cursor: pointer; /* カーソルをポインターに変更 */
+            font-size: 30px; /* 矢印のサイズ */
+            font-weight: bold; /* 太文字にする */
+            margin: 0 20px; /* 左右にマージン */
+            user-select: none; /* 選択できないようにする */
+            vertical-align: middle; /* 縦位置を中央に調整 */
+        }
+
+        h1 {
+            color: #333;
+            text-shadow: 2px 2px 4px rgba(0, 0, 255, 0.5);
+        }
+
+        p {
+            line-height: 1.6; /* 行間を調整して読みやすく */
+        }
+
+        .notice {
+            background-color: #e0f7fa; /* 背景色を淡い水色に */
+            padding: 15px; /* パディングを増やす */
+            border: 2px solid #007bff; /* 周りに青いボーダーを追加 */
+            border-radius: 5px; /* 角を丸くする */
+            font-size: 16px; /* フォントサイズを少し大きく */
+            font-weight: bold; /* 太文字にする */
+            margin: 20px 0; /* 上下にマージンを追加 */
+            text-align: left; /* 左揃え */
+        }
+
+        .image-title {
+            text-align: center; /* 中央揃え */
+            font-weight: bold; /* 太文字 */
+            margin: 5px 0; /* 上下にマージンを追加 */
+            font-size: 18px; /* フォントサイズを大きく */
+            color: #333; /* 色を設定 */
+            text-shadow: 2px 2px 4px rgba(0, 0, 255, 0.5);
+        }
+
+        .recommendation-images {
+            display: flex; /* フレックスボックスを使用 */
+            justify-content: space-between; /* 均等に配置 */
+            margin: 20px 0; /* 上下にマージンを追加 */
+        }
+
+        .recommendation-image {
+            width: 23%; /* 各画像の幅を設定 */
+            border-radius: 5px; /* 角を丸くする */
+        }
+    </style>
+    <script>
+        let currentImageIndex = 0; // 現在の画像インデックス
+        const images = [
+            "ドジャース観戦ツアー.png", // 画像のパスを指定
+            "大谷翔平.png", // 追加の画像
+            "ドジャース壁画.png"  // 追加の画像
+        ];
+
+        function updateImage() {
+            const imageElement = document.getElementById("dogersImage");
+            imageElement.src = images[currentImageIndex];
+            const titleElement = document.getElementById("imageTitle");
+            titleElement.innerText = imageTitles[currentImageIndex]; // タイトルを更新
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length; // 次の画像に移る
+            updateImage();
+        }
+
+        function previousImage() {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length; // 前の画像に移る
+            updateImage();
+        }
+
+        const imageTitles = [
+            "ドジャース観戦ツアー", // 画像1のタイトル
+            "大谷翔平選手の壁画", // 画像2のタイトル
+            "ドジャースの選手の壁画"  // 画像3のタイトル
+        ];
+    </script>
+</head>
+<body>
+
+    <!-- ヘッダー -->
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="tourList.html" class="tours">Tours</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="tour-details">
+        <div class="tour-header">
+            <h1>ドジャースタジアムツアー</h1>
+            <img src="野球アイコン.png" alt="野球のアイコン" class="baseball-image" style="width: 50px; height: 50px;">
+        </div>
+        <div style="text-align: center;">
+            <img id="dogersImage" src="ドジャースタジアムツアー.png" alt="ドジャース観戦ツアー" class="dogers-image">
+            <br>
+            <div class="image-title" id="imageTitle">ドジャース観戦ツアー</div>
+            <span class="arrow" onclick="previousImage()">&lt;</span>
+            <span class="arrow" onclick="nextImage()">&gt;</span>
+        </div>
+
+        <p>
+            大谷翔平選手が6年在籍した古巣エンジェルスを離れ、10年で700億ドル（日本円で約1015億円）というプロスポーツ史上最高の大型契約で新天地に決まったロサンゼルス・ドジャース！！<br>そのドジャースのホームスタジアムのドジャースタジアムはロサンゼルスのダウンタウンの北側にあるエリシアンパークという公園の山の中に、1962年にすり鉢状のように作られました。<br>座席数は全部で５万6千席。ほとんどのお客さんが車で来ますので、球場の周りは広大な駐車場で覆われており、約1万6千台ほどが駐車できるスペースがあります。日本人メジャーリーガーも過去に9人ほど在籍し、日本に野球を伝道した球団として、日本にもとてもゆかりのある球団です。<br>その大谷選手の今季からの活躍が予想されるドジャースタジアムを見学するツアーに皆様をご案内いたします！！
+        </p>
+
+        <div class="schedule-container">
+    
+            <h2>タイムスケジュール(例)</h2>
+            <p class="notice">ツアー時間は3時間～5時間になります
+            <br>他のお客様と混乗になる可能性があります。<br>ツアー料金：$125<br>(ダウンタウンのホテルに限ります。他の地域のホテルは+送迎料金がかかりますので、お問合せ下さい。)<br>催行日：日曜日、月曜日、水曜日、金曜日</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>時間</th>
+                        <th>活動</th>
+                        <th>場所</th>
+                        <th>詳細</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>9:00</td>
+                        <td>ダウンタウンのホテル発</td>
+                        <td>ご宿泊のホテル</td>
+                        <td>ダウンタウンのホテルに限ります<br>それ以外の場合は別途料金が発生します</td>
+                    </tr>
+                    <tr>
+                        <td>10:30~<br>12:00</td>
+                        <td>ドジャースタジアムツアー</td>
+                        <td>ドジャースタジアム</td>
+                        <td>日本語によるガイドサービス、<br>ツアー中の簡単な通訳も致します。</td>
+                    </tr>
+                    <tr>
+                        <td>12:00</td>
+                        <td>ランチ</td>
+                        <td>現地のレストラン</td>
+                        <td>お勧めのレストランをご案内します</tr>
+                    </tr>
+                    <tr>
+                        <td>12:30</td>
+                        <td>ギフトショップでお買い物</td>
+                        <td>ドジャースタジアム</td>
+                        <td>午後も張り切って行きましょう💪</td>
+                    </tr>
+                    <tr>
+                        <td>13:00</td>
+                        <td>大谷選手の壁画で写真撮影</td>
+                        <td>ダウンタウン</td>
+                        <td>大谷選手の前でパシャリ📷</td>
+                    </tr>
+                    <tr>
+                        <td>14:30</td>
+                        <td>ホテルで解散</td>
+                        <td>宿泊ホテル</td>
+                        <td>ご宿泊のホテルで解散になります</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="recommendations">
+            <h2>他のお勧めロケ地ツアー</h2>
+        
+            <div class="recommendation-item">
+                <img src="試合観戦.png" alt="ドジャースタジアムツアー" class="recommendation-image" style="width: 23%; height: auto; border-radius: 5px;">
+                <p><a href="dogers_otani.html">ドジャース観戦ツアー</a></p>
+            </div>
+        </div>
+               
+        <div>
+            <h2>お申し込み・お問い合わせ</h2>
+            <p>お申し込み・お問い合わせは<a href="contact.html">こちら</a>からお願いいたします。</p>
+            <p>お得な情報はlineの公式アカウントからご確認できます</p>
+            <a href="https://www.instagram.com/kazimai2010/?locale=ja_JP" target="_blank">
+                <img src="インスタグラムのアイコン.png" alt="Instagram" style="width: 50px; height: 50px;">
+            </a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
