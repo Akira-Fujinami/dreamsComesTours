@@ -8,7 +8,7 @@ const tours = {
     "『ワイルド・スピード』ロケ地ツアー": "wildspeed.html",
     "『ターミネーター』ロケ地ツアー": "terminator.html"
 };
-
+let currentImageIndex = 0;
 document.getElementById('search-input').addEventListener('input', function() {
     const input = this.value.toLowerCase();
     const autocompleteList = document.getElementById('autocomplete-list');
@@ -195,6 +195,35 @@ function initMap() {
         cityHallInfoWindow.open(map, cityHallMarker); // InfoWindowを開く
     });
 }
-
 // スクリプトの読み込みが終わったらinitMapを実行
 window.initMap = initMap;
+
+function closeModal() {
+    const modal = document.getElementById("modal");
+    modal.style.display = "none"; // モーダルを非表示にする
+    const modalImage = document.getElementById("modalImage");
+    modalImage.src = ""; // 画像のソースを空にして非表示にする
+}
+
+function openModal(imageSrc) {
+    const modal = document.getElementById("modal");
+    const modalImage = document.getElementById("modalImage");
+    modalImage.src = imageSrc; // モーダルに画像を表示
+    modal.style.display = "flex"; // モーダルを表示する
+    modalImage.style.width = "70%";
+}
+function changeImage(direction) {
+    const images = ["マクフライ家.png", "マクフライ家2.png"];
+    currentImageIndex += direction; // インデックスを変更
+
+    // インデックスを範囲内に制限
+    if (currentImageIndex < 0) {
+        currentImageIndex = images.length - 1; // 最後の画像に戻る
+    } else if (currentImageIndex >= images.length) {
+        currentImageIndex = 0; // 最初の画像に戻る
+    }
+
+    // モーダルに新しい画像を表示
+    const modalImage = document.getElementById("modalImage");
+    modalImage.src = images[currentImageIndex];
+}
