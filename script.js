@@ -9,6 +9,7 @@ const tours = {
     "『ターミネーター』ロケ地ツアー": "terminator.html"
 };
 let currentImageIndex = 0;
+let currentFlag = ''
 document.getElementById('search-input').addEventListener('input', function() {
     const input = this.value.toLowerCase();
     const autocompleteList = document.getElementById('autocomplete-list');
@@ -203,17 +204,30 @@ function closeModal() {
     modal.style.display = "none"; // モーダルを非表示にする
     const modalImage = document.getElementById("modalImage");
     modalImage.src = ""; // 画像のソースを空にして非表示にする
+    const imageDescriptionMac = document.getElementById("imageDescription_mac");
+    imageDescriptionMac.style.display = "none";
+    const imageDescriptionLiyon = document.getElementById("imageDescription_liyon");
+    imageDescriptionLiyon.style.display = "none";
 }
 
-function openModal(imageSrc) {
+function openModal(imageSrc, flg) {
     const modal = document.getElementById("modal");
     const modalImage = document.getElementById("modalImage");
+    const imageDescriptionMac = document.getElementById("imageDescription_mac");
+    currentFlag = flg;
+    if (flg == 'mac') {
+        imageDescriptionMac.style.display = "flex";
+    }
+    const imageDescriptionLiyon = document.getElementById("imageDescription_liyon");
+    if (flg == 'liyon') {
+        imageDescriptionLiyon.style.display = "flex";
+    }
     modalImage.src = imageSrc; // モーダルに画像を表示
     modal.style.display = "flex"; // モーダルを表示する
     modalImage.style.width = "70%";
 }
-function changeImage(direction) {
-    const images = ["マクフライ家.png", "マクフライ家2.png"];
+function changeImage(direction, flg) {
+    const images = flg === 'mac' ? ["マクフライ家.png", "マクフライ家2.png"] : ["リヨン団地.png"];
     currentImageIndex += direction; // インデックスを変更
 
     // インデックスを範囲内に制限

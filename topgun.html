@@ -16,7 +16,7 @@
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .backtothefuture-image {
+        .topgun-image {
             width: 80%; /* 画像の幅を80%に設定 */
             height: auto; /* 高さは自動調整 */
             border-radius: 5px; /* 角を丸くする */
@@ -109,18 +109,15 @@
     </header>
 
     <div class="tour-details">
-        <h1>映画『バックトゥザフューチャー』ロケ地巡りツアー</h1>
+        <h1>映画『トップガン』ロケ地巡りツアー</h1>
         <div style="text-align: center;">
-            <img src="バックトゥザフューチャー.png" alt="バックトゥザフューチャーのロケ地" class="backtothefuture-image" style="display: block; margin: 0 auto;">
+            <img src="トップガン.png" alt="トップガンのロケ地" class="topgun-image" style="display: block; margin: 0 auto;">
         </div>
         <p>
-            1985年に世界中で大ヒットしたロバート・ゼメキス監督の映画『バック・トゥー・ザ・フューチャー』。ロケの多くはユニバーサルスタジオ内のセットで行われたが、ロサンゼルスの街中でもたくさんのシーンが撮られている。残念ながら数年前にあの時計台などが火事で焼失してい、おまけにバック・トゥー・ザ・フューチャーのライドまでなくなってしまって、BTTFファンには真に悲しい限りだ。
+            ロサンゼルスから車で約2時間のところにある国境の街、サンディエゴ。サンディエゴと言えば、1986年に世界中で大ヒットした映画『トップガン』の撮影場所で有名です。
         </p>
         <p>
-            映画では1985年から1955年にタイムスリップしたが、このツアーでは1985年の当時にタイムスリップしたかのように、BTTFのロケ地の数々をご紹介する。
-        </p>
-        <p>
-            来年BTTF1の40周年記念という事で、スペシャルツアーも企画中ですので、乞うご期待！
+            トップガンの次回作がささやかれていた2012年の8月19日、監督のトニー・スコット氏がロサンゼルスの南端に位置するサンペドロ港に架かるヴィンセント・トーマス橋から飛び降り自殺をはかり、68歳という若さでこの世を去ってしまいました。<br>その後もトム・クルーズやバル・キルマがトップガンの続編を模索中という話題もあり、『トップガン2』の上映が待ち遠しい今日この頃です。このツアーでは、その偉大なるトニー・スコット監督を追悼して「トップガン」の縁の地を交えながら、サンディエゴの見どころにご案内いたします。
         </p>
 
         <h2>ロケ地</h2>
@@ -129,8 +126,8 @@
             <div class="arrow left-arrow" onclick="changeImage(-1)">&#9664;</div> <!-- 左矢印 -->
             <div style="text-align: center; width:60%">
                 <img id="modalImage" style="width: 70%;" src="" alt="拡大画像">
-                <div id="imageDescription_mac" style="display: none; color: white; text-align: center;">1985年にマーティ・マクフライ（マイケル・J・フォックス）が住んでいる家として登場した家。<br>一度住人の方とお話しさせていただいたとき、当時撮影後マイケル・J・フォックスが住人の方の家族と一緒に『ファミリータイズ』を居間のテレビで一緒に見たと言っていました。当時から隣に住んでいる年配の女性が当時の写真をコピーしたものをいつも訪問客に下さり、親切にしてくれます。今この家の値段は日本円で1億円以上するそうです。</div> <!-- 固定の説明文 -->
-                <div id="imageDescription_liyon" style="display: none; color: white; text-align: center;">1985年のリヨン団地のゲートがあった場所です。</div>
+                <div id="imageDescription_penny" style="display: none; color: white; text-align: center;"></div> <!-- 固定の説明文 -->
+                <div id="imageDescription_marveric" style="display: none; color: white; text-align: center;">坂道を下からマーべリック（トム・クルーズ）がバイクで上がってくるシーンで登場します。</div>
             </div>
             <div class="arrow right-arrow" id="right_arrow"onclick="changeImage(1, currentFlag)">&#9654;</div> <!-- 右矢印 -->
         </div>
@@ -139,12 +136,12 @@
         <!-- 画像をクリックしてモーダルを開く -->
         <div style="display: flex; justify-content: center; align-items: center;">
             <div style="text-align: center; margin-right: 20px;">
-                <p><strong>1985年のマクフライ家</strong></p>
-                <img id="imageToHide" src="マクフライ家.png" alt="マクフライ家の画像" onclick="openModal('マクフライ家.png', 'mac')" style="width: 80%;">
+                <p><strong>ペニー(ジェニファー・コネリー)の家</strong></p>
+                <img id="imageToHide" src="ペニー(ジェニファー・コネリー)の家.png" alt="ペニー(ジェニファー・コネリー)の家の画像" onclick="openModal('ペニー(ジェニファー・コネリー)の家.png', 'penny')" style="width: 80%;">
             </div>
             <div style="text-align: center;">
-                <p><strong>1985年のリヨン団地のゲートがあった場所</strong></p>
-                <img id="imageToShow" src="リヨン団地.png" alt="別のロケ地の画像" onclick="openModal('リヨン団地.png', 'liyon')" style="width: 80%;">
+                <p><strong>マーベリックがバイクで上がってきた坂</strong></p>
+                <img id="imageToShow" src="マーベリックがバイクで上がってきた坂.png" alt="マーベリックがバイクで上がってきた坂の画像" onclick="openModal('マーベリックがバイクで上がってきた坂.png', 'marveric')" style="width: 80%;">
             </div>
         </div>
         
@@ -240,6 +237,6 @@
                 
     </div>
 
-    <script src="script.js"></script>
+    <script src="topgun.js"></script>
 </body>
 </html>

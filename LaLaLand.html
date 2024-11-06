@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>映画『ワイルド・スピード』ロケ地巡りツアー</title>
+    <title>映画『ラ・ラ・ランド』ロケ地巡りツアー</title>
     <link rel="stylesheet" href="styles.css">
     <style>
 
@@ -86,14 +86,6 @@
             cursor: pointer; /* クリック可能なカーソルに */
         }
 
-        .arrow {
-            cursor: pointer; /* カーソルをポインターに変更 */
-            font-size: 30px; /* 矢印のサイズ */
-            font-weight: bold; /* 太文字にする */
-            margin: 0 20px; /* 左右にマージン */
-            user-select: none; /* 選択できないようにする */
-            vertical-align: middle; /* 縦位置を中央に調整 */
-        }
     </style>
 </head>
 <body>
@@ -109,42 +101,34 @@
     </header>
 
     <div class="tour-details">
-        <h1>映画『バックトゥザフューチャー』ロケ地巡りツアー</h1>
+        <h1>映画『ラ・ラ・ランド』ロケ地巡りツアー</h1>
         <div style="text-align: center;">
-            <img src="バックトゥザフューチャー.png" alt="バックトゥザフューチャーのロケ地" class="backtothefuture-image" style="display: block; margin: 0 auto;">
+            <img src="ラ・ラ・ランド.png" alt="ラ・ラ・ランドのロケ地" class="backtothefuture-image" style="display: block; margin: 0 auto;">
         </div>
         <p>
-            1985年に世界中で大ヒットしたロバート・ゼメキス監督の映画『バック・トゥー・ザ・フューチャー』。ロケの多くはユニバーサルスタジオ内のセットで行われたが、ロサンゼルスの街中でもたくさんのシーンが撮られている。残念ながら数年前にあの時計台などが火事で焼失してい、おまけにバック・トゥー・ザ・フューチャーのライドまでなくなってしまって、BTTFファンには真に悲しい限りだ。
-        </p>
-        <p>
-            映画では1985年から1955年にタイムスリップしたが、このツアーでは1985年の当時にタイムスリップしたかのように、BTTFのロケ地の数々をご紹介する。
-        </p>
-        <p>
-            来年BTTF1の40周年記念という事で、スペシャルツアーも企画中ですので、乞うご期待！
+            2016年度のアカデミー賞で6部門を受賞した映画『ラ・ラ・ランド』。ラ・ラ・ランドとはロサンゼルスやハリウッドのあだ名として使われます。<br>ハリウッドでの華やかな生活に酔いしれているような人たちを「あの人はラ・ラ・ランドに生きている。」と言ったりするようです。現実逃避したような状態や世界をハリウッドの華やかな世界に例えてそう呼ぶようです。映画『ラ・ラ・ランド』にはロサンゼルスのいろいろな場所が登場します。このツアーではそんな映画『ラ・ラ・ランド』の世界へあなたをご案内いたします。
         </p>
 
         <h2>ロケ地</h2>
         <div class="modal" id="modal">
             <button class="close-button" id="closeButton" onclick="closeModal()">✖</button>
-            <div class="arrow left-arrow" onclick="changeImage(-1)">&#9664;</div> <!-- 左矢印 -->
             <div style="text-align: center; width:60%">
                 <img id="modalImage" style="width: 70%;" src="" alt="拡大画像">
-                <div id="imageDescription_mac" style="display: none; color: white; text-align: center;">1985年にマーティ・マクフライ（マイケル・J・フォックス）が住んでいる家として登場した家。<br>一度住人の方とお話しさせていただいたとき、当時撮影後マイケル・J・フォックスが住人の方の家族と一緒に『ファミリータイズ』を居間のテレビで一緒に見たと言っていました。当時から隣に住んでいる年配の女性が当時の写真をコピーしたものをいつも訪問客に下さり、親切にしてくれます。今この家の値段は日本円で1億円以上するそうです。</div> <!-- 固定の説明文 -->
-                <div id="imageDescription_liyon" style="display: none; color: white; text-align: center;">1985年のリヨン団地のゲートがあった場所です。</div>
+                <div id="imageDescription_angel" style="display: none; color: white; text-align: center;">ミアとセバスチャンが夏にデートした場所の一つ。<br>1998年のニコラス・ケイジとメグ・ライアン共演の映画『シティ・オブ・エンジェル』で二人がこの市場で洋ナシを買うシーンで登場している。1917年にオープンして以来、今年で100周年を迎えるこの市場も、一時さびれていたが、最近のダウンタウン再開発ブームに乗って、今ではグルメコーヒー店、地ビール専門店、ベジタリアンらーめんやお弁当を提供するお店が出店するなど、ダウンタウンの人気スポットの一つになりつつある。</div> <!-- 固定の説明文 -->
+                <div id="imageDescription_grand" style="display: none; color: white; text-align: center;">ミアとセバスチャンが夏にデートした場所の一部として一瞬登場する。ここは以前自殺の名所として有名だったそうだが、歴史のあるパサデナにあるだけに、街灯などもとても趣があって隣を走る高速からいつも眺めては、魅力的な橋だなぁと思っていた。</div>
             </div>
-            <div class="arrow right-arrow" id="right_arrow"onclick="changeImage(1, currentFlag)">&#9654;</div> <!-- 右矢印 -->
         </div>
         
         
         <!-- 画像をクリックしてモーダルを開く -->
         <div style="display: flex; justify-content: center; align-items: center;">
             <div style="text-align: center; margin-right: 20px;">
-                <p><strong>1985年のマクフライ家</strong></p>
-                <img id="imageToHide" src="マクフライ家.png" alt="マクフライ家の画像" onclick="openModal('マクフライ家.png', 'mac')" style="width: 80%;">
+                <p><strong>エンジェルズ・フライト</strong></p>
+                <img id="imageToHide" src="ラ・ラ・ランド・エンジェルズ・フライト.png" alt="エンジェルズ・フライトの画像" onclick="openModal('ラ・ラ・ランド・エンジェルズ・フライト.png', 'angel')" style="width: 90%;">
             </div>
             <div style="text-align: center;">
-                <p><strong>1985年のリヨン団地のゲートがあった場所</strong></p>
-                <img id="imageToShow" src="リヨン団地.png" alt="別のロケ地の画像" onclick="openModal('リヨン団地.png', 'liyon')" style="width: 80%;">
+                <p><strong>グランド・セントラル・マーケット</strong></p>
+                <img id="imageToShow" src="グランド・セントラル・マーケット.png" alt="グランド・セントラル・マーケットの画像" onclick="openModal('グランド・セントラル・マーケット.png', 'grand')" style="width: 90%;">
             </div>
         </div>
         
@@ -240,6 +224,6 @@
                 
     </div>
 
-    <script src="script.js"></script>
+    <script src="LaLaLand.js"></script>
 </body>
 </html>
