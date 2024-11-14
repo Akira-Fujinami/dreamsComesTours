@@ -261,3 +261,27 @@ tr:nth-child(even) {
     color: red; /* 赤文字 */
     margin: 10px 0; /* 上下のマージン */
 }
+.recommendation-images {
+    display: flex;
+    flex-wrap: nowrap; /* 折り返しを防ぐ */
+    justify-content: space-around; /* 各画像の間隔を均等に配置 */
+    gap: 20px; /* 各画像間の隙間 */
+}
+
+.recommendation-item {
+    text-align: center;
+}
+
+.recommendation-image {
+    width: 100px; /* 写真の幅を調整 */
+    height: auto;
+    border-radius: 5px;
+}
+
+.recommendation-list {
+    list-style-type: none; /* デフォルトのリストスタイルを無効に */
+    padding: 0; /* パディングをリセット */
+    display: flex; /* フレックスボックスを使用 */
+    justify-content: space-around; /* 項目の間隔を均等に */
+    margin-top: 10px; /* 上部のマージンを追加 */
+}

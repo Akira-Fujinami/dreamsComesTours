@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>映画『ビバリーヒルズ・コップ』ロケ地巡りツアー</title>
+    <title>映画『スターウォーズ』のロケ地も巡るデスバレー国立公園ツアー</title>
     <link rel="stylesheet" href="styles.css">
     <style>
 
@@ -16,7 +16,7 @@
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .beverly-hills-image {
+        .starWars-image {
             width: 80%; /* 画像の幅を80%に設定 */
             height: auto; /* 高さは自動調整 */
             border-radius: 5px; /* 角を丸くする */
@@ -109,18 +109,12 @@
     </header>
 
     <div class="tour-details">
-        <h1>映画『ビバリーヒルズ・コップ』ロケ地巡りツアー</h1>
+        <h1>『スターウォーズ』のロケ地も巡る<br>デスバレー国立公園ツアー</h1>
         <div style="text-align: center;">
-            <img src="ビバリーヒルズ・コップ.png" alt="ビバリーヒルズ・コップのロケ地" class="beverly-hills-image" style="display: block; margin: 0 auto;">
+            <img src="スターウォーズ.png" alt="スターウォーズのロケ地" class="starWars-image" style="display: block; margin: 0 auto;">
         </div>
         <p>
-            今年は、つい先日7月3日にエディー・マーフィー主演の大ヒット映画『ビバリーヒルズ・コップ』がアメリカで上映されてから40周年という事もあって、Netflixでは『ビバリーヒルズ・コップ』の新シリーズ『ビバリーヒルズ・コップ 4 Axel F』が大ヒットストリーミング中ですが、今Netflixで一番人気の作品です。
-        </p>
-        <p>
-            そこで、弊社ドリームズ・カム・ツアーズでは、『ビバリーヒルズ・コップ』40周年を記念いたしまして、『ビバリーヒルズ・コップ』ロケ地ツアーを催行中です。
-        </p>
-        <p>
-            我こそは大のビバリーヒルズ・コップファン、エディー・マーフィーファンという方は是非ご参加下さい♪
+            広がる砂漠の中に見える異星の風景。『スターウォーズ』の世界でおなじみの惑星タトゥイーンのシーンが撮影された場所がここ、デスバレー国立公園です。<br>このツアーでは、映画の名シーンを彷彿とさせる広大な砂漠と岩の絶景を巡りながら、まるで銀河の一員になったかのような体験をお楽しみいただけます。壮大な自然と映画の世界が織りなす特別な空間を、ぜひ一緒に堪能しましょう！<br>『スターウォーズ』ファンならではの冒険が、ここから始まります。
         </p>
 
         <h2>ロケ地</h2>
@@ -129,8 +123,8 @@
             <div class="arrow left-arrow" onclick="changeImage(-1, currentFlag)">&#9664;</div> <!-- 左矢印 -->
             <div style="text-align: center; width:60%">
                 <img id="modalImage" style="width: 70%;" src="" alt="拡大画像">
-                <div id="imageDescription_tobacco" style="display: none; color: white; text-align: center;"></div> <!-- 固定の説明文 -->
-                <div id="imageDescription_accel" style="display: none; color: white; text-align: center;">『ビバリーヒルズ・コップ』でアクセル・フォーリーのアパートとして使われた建物。<br>友達のマイキーがアパートの踊り場で何者かに殺された。<br>今はメキシコ系移民の低所得者層が住むアパートとして利用されている。</div>
+                <div id="imageDescription_mojave" style="display: none; color: white; text-align: center;">「航空機の墓場」という異名を持つモハーヴェ空港があるモハーヴェでトイレ休憩。<br>「FLY!FLY!FLY! 飛行機の墓場モハベ空港」としてテレビでも紹介された。</div> <!-- 固定の説明文 -->
+                <div id="imageDescription_pinacl" style="display: none; color: white; text-align: center;">ティム・バートン監督、マーク・ウォールバーグが主演した映画『PLANET OF THE APES/猿の惑星』のロケーションとして使用されたトローナ・ピナクル。<br>　ピナクルとは、小尖塔という意味で、トゥファ（石灰華）と呼ばれる温泉、鉱泉、あるいは地下水中より生じた石灰質化学沈殿岩で、緻密、多孔質、縞状など、多様な構造をもつ。<br>　そのような小尖塔が約500本あまりも立っている場所がデスバレーに行く途中にあるのだ。</div>
             </div>
             <div class="arrow right-arrow" id="right_arrow"onclick="changeImage(1, currentFlag)">&#9654;</div> <!-- 右矢印 -->
         </div>
@@ -139,12 +133,12 @@
         <!-- 画像をクリックしてモーダルを開く -->
         <div style="display: flex; justify-content: center; align-items: center;">
             <div style="text-align: center; margin-right: 20px;">
-                <p><strong>密輸タバコのトラックのあった路地</strong></p>
-                <img id="imageToHide" src="密輸たばこのトラックのあった路地.png" alt="密輸たばこのトラックのあった路地の画像" onclick="openModal('密輸たばこのトラックのあった路地.png', 'tobacco')" style="width: 90%;">
+                <p><strong>モハべ宇宙港</strong></p>
+                <img id="imageToHide" src="モハベ宇宙港.png" alt="モハべ宇宙港の画像" onclick="openModal('モハベ宇宙港.png', 'mojave')" style="width: 90%;">
             </div>
             <div style="text-align: center;">
-                <p><strong>アクセル・フォーリーのデトロイトのアパート</strong></p>
-                <img id="imageToShow" src="アクセル・フォーリーのデトロイトのアパート.png" alt="アクセル・フォーリーのデトロイトのアパートの画像" onclick="openModal('アクセル・フォーリーのデトロイトのアパート.png', 'accel')" style="width: 80%;">
+                <p><strong>トローナ・ピナクル</strong></p>
+                <img id="imageToShow" src="トローナ・ピナクル.png" alt="トローナ・ピナクルの画像" onclick="openModal('トローナ・ピナクル.png', 'pinacl')" style="width: 80%;">
             </div>
         </div>
         
@@ -224,8 +218,8 @@
                 </div>
             
                 <div class="recommendation-item">
-                    <img src="ラ・ラ・ランド.png" alt="ラ・ラ・ランドのロケ地" class="recommendation-image">
-                    <p><a href="LaLaLand.html">『ラ・ラ・ランド』</a></p>
+                    <img src="ビバリーヒルズ・コップ.png" alt="ビバリーヒルズ・コップのロケ地" class="recommendation-image">
+                    <p><a href="beverly_hills_cop.html">『ビバリーヒルズ・コップ』</a></p>
                 </div>
             </div>
         </div>
@@ -242,6 +236,6 @@
                 
     </div>
 
-    <script src="beverly_hills_cop.js"></script>
+    <script src="starwars.js"></script>
 </body>
 </html>
