@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>映画『ラ・ラ・ランド』ロケ地巡りツアー</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>映画『スターウォーズ』のロケ地も巡るデスバレー国立公園ツアー</title>
+    <link rel="stylesheet" href="../styles.css">
     <style>
 
         .tour-details {
@@ -16,7 +16,7 @@
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .backtothefuture-image {
+        .starWars-image {
             width: 80%; /* 画像の幅を80%に設定 */
             height: auto; /* 高さは自動調整 */
             border-radius: 5px; /* 角を丸くする */
@@ -86,6 +86,14 @@
             cursor: pointer; /* クリック可能なカーソルに */
         }
 
+        .arrow {
+            cursor: pointer; /* カーソルをポインターに変更 */
+            font-size: 30px; /* 矢印のサイズ */
+            font-weight: bold; /* 太文字にする */
+            margin: 0 20px; /* 左右にマージン */
+            user-select: none; /* 選択できないようにする */
+            vertical-align: middle; /* 縦位置を中央に調整 */
+        }
     </style>
 </head>
 <body>
@@ -93,42 +101,44 @@
     <!-- ヘッダー -->
     <header>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="tourList.html" class="tours">Tours</a>
-            <a href="#about">About Us</a>
-            <a href="#contact">Contact</a>
+            <a href="../index.html">Home</a>
+            <a href="../tourList.html" class="tours">Tours</a>
+            <a href="../#about">About Us</a>
+            <a href="../#contact">Contact</a>
         </nav>
     </header>
 
     <div class="tour-details">
-        <h1>映画『ラ・ラ・ランド』ロケ地巡りツアー</h1>
+        <h1>『スターウォーズ』のロケ地も巡る<br>デスバレー国立公園ツアー</h1>
         <div style="text-align: center;">
-            <img src="ラ・ラ・ランド.png" alt="ラ・ラ・ランドのロケ地" class="backtothefuture-image" style="display: block; margin: 0 auto;">
+            <img src="スターウォーズ.png" alt="スターウォーズのロケ地" class="starWars-image" style="display: block; margin: 0 auto;">
         </div>
         <p>
-            2016年度のアカデミー賞で6部門を受賞した映画『ラ・ラ・ランド』。ラ・ラ・ランドとはロサンゼルスやハリウッドのあだ名として使われます。<br>ハリウッドでの華やかな生活に酔いしれているような人たちを「あの人はラ・ラ・ランドに生きている。」と言ったりするようです。現実逃避したような状態や世界をハリウッドの華やかな世界に例えてそう呼ぶようです。映画『ラ・ラ・ランド』にはロサンゼルスのいろいろな場所が登場します。このツアーではそんな映画『ラ・ラ・ランド』の世界へあなたをご案内いたします。
+            広がる砂漠の中に見える異星の風景。『スターウォーズ』の世界でおなじみの惑星タトゥイーンのシーンが撮影された場所がここ、デスバレー国立公園です。<br>このツアーでは、映画の名シーンを彷彿とさせる広大な砂漠と岩の絶景を巡りながら、まるで銀河の一員になったかのような体験をお楽しみいただけます。壮大な自然と映画の世界が織りなす特別な空間を、ぜひ一緒に堪能しましょう！<br>『スターウォーズ』ファンならではの冒険が、ここから始まります。
         </p>
 
         <h2>ロケ地</h2>
         <div class="modal" id="modal">
             <button class="close-button" id="closeButton" onclick="closeModal()">✖</button>
+            <div class="arrow left-arrow" onclick="changeImage(-1, currentFlag)">&#9664;</div> <!-- 左矢印 -->
             <div style="text-align: center; width:60%">
                 <img id="modalImage" style="width: 70%;" src="" alt="拡大画像">
-                <div id="imageDescription_angel" style="display: none; color: white; text-align: center;">ミアとセバスチャンが夏にデートした場所の一つ。<br>1998年のニコラス・ケイジとメグ・ライアン共演の映画『シティ・オブ・エンジェル』で二人がこの市場で洋ナシを買うシーンで登場している。1917年にオープンして以来、今年で100周年を迎えるこの市場も、一時さびれていたが、最近のダウンタウン再開発ブームに乗って、今ではグルメコーヒー店、地ビール専門店、ベジタリアンらーめんやお弁当を提供するお店が出店するなど、ダウンタウンの人気スポットの一つになりつつある。</div> <!-- 固定の説明文 -->
-                <div id="imageDescription_grand" style="display: none; color: white; text-align: center;">ミアとセバスチャンが夏にデートした場所の一部として一瞬登場する。ここは以前自殺の名所として有名だったそうだが、歴史のあるパサデナにあるだけに、街灯などもとても趣があって隣を走る高速からいつも眺めては、魅力的な橋だなぁと思っていた。</div>
+                <div id="imageDescription_mojave" style="display: none; color: white; text-align: center;">「航空機の墓場」という異名を持つモハーヴェ空港があるモハーヴェでトイレ休憩。<br>「FLY!FLY!FLY! 飛行機の墓場モハベ空港」としてテレビでも紹介された。</div> <!-- 固定の説明文 -->
+                <div id="imageDescription_pinacl" style="display: none; color: white; text-align: center;">ティム・バートン監督、マーク・ウォールバーグが主演した映画『PLANET OF THE APES/猿の惑星』のロケーションとして使用されたトローナ・ピナクル。<br>　ピナクルとは、小尖塔という意味で、トゥファ（石灰華）と呼ばれる温泉、鉱泉、あるいは地下水中より生じた石灰質化学沈殿岩で、緻密、多孔質、縞状など、多様な構造をもつ。<br>　そのような小尖塔が約500本あまりも立っている場所がデスバレーに行く途中にあるのだ。</div>
             </div>
+            <div class="arrow right-arrow" id="right_arrow"onclick="changeImage(1, currentFlag)">&#9654;</div> <!-- 右矢印 -->
         </div>
         
         
         <!-- 画像をクリックしてモーダルを開く -->
         <div style="display: flex; justify-content: center; align-items: center;">
             <div style="text-align: center; margin-right: 20px;">
-                <p><strong>エンジェルズ・フライト</strong></p>
-                <img id="imageToHide" src="ラ・ラ・ランド・エンジェルズ・フライト.png" alt="エンジェルズ・フライトの画像" onclick="openModal('ラ・ラ・ランド・エンジェルズ・フライト.png', 'angel')" style="width: 90%;">
+                <p><strong>モハべ宇宙港</strong></p>
+                <img id="imageToHide" src="モハベ宇宙港.png" alt="モハべ宇宙港の画像" onclick="openModal('モハベ宇宙港.png', 'mojave')" style="width: 90%;">
             </div>
             <div style="text-align: center;">
-                <p><strong>グランド・セントラル・マーケット</strong></p>
-                <img id="imageToShow" src="グランド・セントラル・マーケット.png" alt="グランド・セントラル・マーケットの画像" onclick="openModal('グランド・セントラル・マーケット.png', 'grand')" style="width: 90%;">
+                <p><strong>トローナ・ピナクル</strong></p>
+                <img id="imageToShow" src="トローナ・ピナクル.png" alt="トローナ・ピナクルの画像" onclick="openModal('トローナ・ピナクル.png', 'pinacl')" style="width: 80%;">
             </div>
         </div>
         
@@ -193,23 +203,23 @@
         
             <div class="recommendation-images">
                 <div class="recommendation-item">
-                    <img src="トップガン.png" alt="トップガンのロケ地" class="recommendation-image">
-                    <p><a href="topgun.html">『トップガン』</a></p>
+                    <img src="../topgun/トップガン.png" alt="トップガンのロケ地" class="recommendation-image">
+                    <p><a href="../topgun/index.html">『トップガン』</a></p>
                 </div>
             
                 <div class="recommendation-item">
-                    <img src="ワイルドスピード.png" alt="ワイルドスピードのロケ地" class="recommendation-image">
-                    <p><a href="wildspeed.html">『ワイルドスピード』</a></p>
+                    <img src="../wildspeed/ワイルドスピード.png" alt="ワイルドスピードのロケ地" class="recommendation-image">
+                    <p><a href="../wildspeed/index.html">『ワイルドスピード』</a></p>
                 </div>
             
                 <div class="recommendation-item">
-                    <img src="バックトゥザフューチャー.png" alt="バックトゥザフューチャーのロケ地" class="recommendation-image">
-                    <p><a href="backtothefuture.html">『バックトゥザフューチャー』</a></p>
+                    <img src="../backtothefuture/バックトゥザフューチャー.png" alt="バックトゥザフューチャーのロケ地" class="recommendation-image">
+                    <p><a href="../backtothefuture/index.html">『バックトゥザフューチャー』</a></p>
                 </div>
             
                 <div class="recommendation-item">
-                    <img src="ビバリーヒルズ・コップ.png" alt="ビバリーヒルズ・コップのロケ地" class="recommendation-image">
-                    <p><a href="beverly_hills_cop.html">『ビバリーヒルズ・コップ』</a></p>
+                    <img src="../beverlyHillsCop/ビバリーヒルズ・コップ.png" alt="ビバリーヒルズ・コップのロケ地" class="recommendation-image">
+                    <p><a href="../beverlyHillsCop/index.html">『ビバリーヒルズ・コップ』</a></p>
                 </div>
             </div>
         </div>
@@ -220,12 +230,12 @@
             <p>お申し込みは<a href="contact.html">こちら</a>からお願いいたします。</p>
             <p>お得な情報はlineの公式アカウントからご確認できます</p>
             <a href="https://www.instagram.com/kazimai2010/?locale=ja_JP" target="_blank">
-                <img src="インスタグラムのアイコン.png" alt="Instagram" style="width: 50px; height: 50px;">
+                <img src="../インスタグラムのアイコン.png" alt="Instagram" style="width: 50px; height: 50px;">
             </a>
         </div>
                 
     </div>
 
-    <script src="LaLaLand.js"></script>
+    <script src="starwars.js"></script>
 </body>
 </html>

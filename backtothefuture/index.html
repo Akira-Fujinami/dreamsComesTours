@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>映画『ブレードランナー』ロケ地巡りツアー</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>映画『ワイルド・スピード』ロケ地巡りツアー</title>
+    <link rel="stylesheet" href="../styles.css">
     <style>
 
         .tour-details {
@@ -16,7 +16,7 @@
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .blade-runner-image {
+        .backtothefuture-image {
             width: 80%; /* 画像の幅を80%に設定 */
             height: auto; /* 高さは自動調整 */
             border-radius: 5px; /* 角を丸くする */
@@ -71,31 +71,36 @@
     <!-- ヘッダー -->
     <header>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="tourList.html" class="tours">Tours</a>
-            <a href="#about">About Us</a>
-            <a href="#contact">Contact</a>
+            <a href="../index.html">Home</a>
+            <a href="../tourList.html" class="tours">Tours</a>
+            <a href="../#about">About Us</a>
+            <a href="../#contact">Contact</a>
         </nav>
     </header>
 
     <div class="tour-details">
-        <h1>『ブレードランナー』ロケ地巡りツアー</h1>
+        <h1>映画『バックトゥザフューチャー』ロケ地巡りツアー</h1>
         <div style="text-align: center;">
-            <img src="ブレードランナー.png" alt="ブレードランナーのロケ地" class="blade-runner-image" style="display: block; margin: 0 auto;">
+            <img src="バックトゥザフューチャー.png" alt="バックトゥザフューチャーのロケ地" class="backtothefuture-image" style="display: block; margin: 0 auto;">
         </div>
         <p>
-            未来都市の暗い街並みや、ネオンが輝くレトロフューチャーな風景。『ブレードランナー』の世界は、映画を超えて多くの人々の想像をかき立てる場所として知られています。<br>このツアーでは、あのディストピアな世界観をリアルに感じられるロケ地を巡り、映画のシーンを思い起こす特別な体験をご提供します。シティスケープの中に隠された名シーンや、未来都市に漂う不思議な雰囲気をぜひ体感してください。<br>『ブレードランナー』の世界へ、一緒に踏み出してみませんか？
+            1985年に世界中で大ヒットしたロバート・ゼメキス監督の映画『バック・トゥー・ザ・フューチャー』。ロケの多くはユニバーサルスタジオ内のセットで行われたが、ロサンゼルスの街中でもたくさんのシーンが撮られている。残念ながら数年前にあの時計台などが火事で焼失してい、おまけにバック・トゥー・ザ・フューチャーのライドまでなくなってしまって、BTTFファンには真に悲しい限りだ。
+        </p>
+        <p>
+            映画では1985年から1955年にタイムスリップしたが、このツアーでは1985年の当時にタイムスリップしたかのように、BTTFのロケ地の数々をご紹介する。
+        </p>
+        <p>
+            来年BTTF1の40周年記念という事で、スペシャルツアーも企画中ですので、乞うご期待！
         </p>
 
         <h2>ロケ地</h2>
         <div class="modal" id="modal">
             <button class="close-button" id="closeButton" onclick="closeModal()">✖</button>
-            <div class="arrow left-arrow" onclick="changeImage(-1, currentFlag)">&#9664;</div> <!-- 左矢印 -->
+            <div class="arrow left-arrow" onclick="changeImage(-1)">&#9664;</div> <!-- 左矢印 -->
             <div style="text-align: center; width:60%">
                 <img id="modalImage" style="width: 70%;" src="" alt="拡大画像">
-                <div id="imageDescription_blad" style="display: none; color: white; text-align: center;">劇中J・F・セバスチャンが住むのブラッドベリー・アパートとして登場し、デッカード（ハリソン・フォード）がバッティ（ルトガー・ハウアー）やプリス（ダリル・ハンナ）と戦った場所として、劇中大々的に登場する建物。<br>実際に昔からハリウッド映画ではしばしばロケ地に使用されている。</div> <!-- 固定の説明文 -->
-                <div id="imageDescription_union" style="display: none; color: white; text-align: center;">ハリソン・フォード扮するリック・デッカード刑事がうどんか何かを屋台で食べている時に、エドワード・ジェイムズ・オルモス扮するエドワード・ガフから職務質問を受け、連れていかれたロサンゼルス市警の建物として登場する。</div>
-                <div id="imageDescription_enniss" style="display: none; color: white; text-align: center;">ハリソン・フォード扮するリック・デッカードが住むアパートとして登場した建物。かの有名な建築家、フランク・ロイド・ライトが設計した有名な建物だ。</div>
+                <div id="imageDescription_mac" style="display: none; color: white; text-align: center;">1985年にマーティ・マクフライ（マイケル・J・フォックス）が住んでいる家として登場した家。<br>一度住人の方とお話しさせていただいたとき、当時撮影後マイケル・J・フォックスが住人の方の家族と一緒に『ファミリータイズ』を居間のテレビで一緒に見たと言っていました。当時から隣に住んでいる年配の女性が当時の写真をコピーしたものをいつも訪問客に下さり、親切にしてくれます。今この家の値段は日本円で1億円以上するそうです。</div> <!-- 固定の説明文 -->
+                <div id="imageDescription_liyon" style="display: none; color: white; text-align: center;">1985年のリヨン団地のゲートがあった場所です。</div>
             </div>
             <div class="arrow right-arrow" id="right_arrow"onclick="changeImage(1, currentFlag)">&#9654;</div> <!-- 右矢印 -->
         </div>
@@ -104,16 +109,12 @@
         <!-- 画像をクリックしてモーダルを開く -->
         <div style="display: flex; justify-content: center; align-items: center;">
             <div style="text-align: center; margin-right: 20px;">
-                <p><strong>ブラッドベリー・ビルディング</strong></p>
-                <img id="imageToHide" src="ブラッドベリー・ビルディング1.png" alt="ブラッドベリー・ビルディングの画像" onclick="openModal('ブラッドベリー・ビルディング1.png', 'blad')" style="width: 90%;">
+                <p><strong>1985年のマクフライ家</strong></p>
+                <img id="imageToHide" src="マクフライ家.png" alt="マクフライ家の画像" onclick="openModal('マクフライ家.png', 'mac')" style="width: 80%;">
             </div>
             <div style="text-align: center;">
-                <p><strong>ユニオンステーション</strong></p>
-                <img id="imageToShow" src="ユニオンステーション.png" alt="ユニオンステーションの画像" onclick="openModal('ユニオンステーション.png', 'union')" style="width: 80%;">
-            </div>
-            <div style="text-align: center;">
-                <p><strong>エニスハウス</strong></p>
-                <img id="imageToShow" src="エニスハウス.png" alt="エニスハウスの画像" onclick="openModal('エニスハウス.png', 'enniss')" style="width: 80%;">
+                <p><strong>1985年のリヨン団地のゲートがあった場所</strong></p>
+                <img id="imageToShow" src="リヨン団地.png" alt="別のロケ地の画像" onclick="openModal('リヨン団地.png', 'liyon')" style="width: 80%;">
             </div>
         </div>
         
@@ -178,23 +179,23 @@
         
             <div class="recommendation-images">
                 <div class="recommendation-item">
-                    <img src="バックトゥザフューチャー.png" alt="バックトゥザフューチャーのロケ地" class="recommendation-image">
-                    <p><a href="backtothefuture.html">『バックトゥザフューチャー』</a></p>
+                    <img src="../topgun/トップガン.png" alt="トップガンのロケ地" class="recommendation-image">
+                    <p><a href="../topgun/index.html">『トップガン』</a></p>
                 </div>
             
                 <div class="recommendation-item">
-                    <img src="ワイルドスピード.png" alt="ワイルドスピードのロケ地" class="recommendation-image">
-                    <p><a href="wildspeed.html">『ワイルドスピード』</a></p>
+                    <img src="../wildspeed/ワイルドスピード.png" alt="ワイルドスピードのロケ地" class="recommendation-image">
+                    <p><a href="../wildspeed/index.html">『ワイルドスピード』</a></p>
                 </div>
             
                 <div class="recommendation-item">
-                    <img src="ラ・ラ・ランド.png" alt="ラ・ラ・ランドのロケ地" class="recommendation-image">
-                    <p><a href="nightTour.html">『トップガン』</a></p>
+                    <img src="../LaLaLand/ラ・ラ・ランド.png" alt="ラ・ラ・ランドのロケ地" class="recommendation-image">
+                    <p><a href="../LaLaLand/index.html">『ラ・ラ・ランド』</a></p>
                 </div>
             
                 <div class="recommendation-item">
-                    <img src="ビバリーヒルズ・コップ.png" alt="ビバリーヒルズ・コップのロケ地" class="recommendation-image">
-                    <p><a href="beverly_hills_cop.html">『ビバリーヒルズ・コップ』</a></p>
+                    <img src="../beverlyHillsCop/ビバリーヒルズ・コップ.png" alt="ビバリーヒルズ・コップのロケ地" class="recommendation-image">
+                    <p><a href="../beverlyHillsCop/index.html">『ビバリーヒルズ・コップ』</a></p>
                 </div>
             </div>
         </div>
@@ -211,6 +212,6 @@
                 
     </div>
 
-    <script src="bladeRunner.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>映画『ワイルド・スピード』ロケ地巡りツアー</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>映画『ビバリーヒルズ・コップ』ロケ地巡りツアー</title>
+    <link rel="stylesheet" href="../styles.css">
     <style>
 
         .tour-details {
@@ -16,7 +16,7 @@
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .topgun-image {
+        .beverly-hills-image {
             width: 80%; /* 画像の幅を80%に設定 */
             height: auto; /* 高さは自動調整 */
             border-radius: 5px; /* 角を丸くする */
@@ -101,23 +101,26 @@
     <!-- ヘッダー -->
     <header>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="tourList.html" class="tours">Tours</a>
-            <a href="#about">About Us</a>
-            <a href="#contact">Contact</a>
+            <a href="../index.html">Home</a>
+            <a href="../tourList.html" class="tours">Tours</a>
+            <a href="../#about">About Us</a>
+            <a href="../#contact">Contact</a>
         </nav>
     </header>
 
     <div class="tour-details">
-        <h1>映画『トップガン』ロケ地巡りツアー</h1>
+        <h1>映画『ビバリーヒルズ・コップ』ロケ地巡りツアー</h1>
         <div style="text-align: center;">
-            <img src="トップガン.png" alt="トップガンのロケ地" class="topgun-image" style="display: block; margin: 0 auto;">
+            <img src="ビバリーヒルズ・コップ.png" alt="ビバリーヒルズ・コップのロケ地" class="beverly-hills-image" style="display: block; margin: 0 auto;">
         </div>
         <p>
-            ロサンゼルスから車で約2時間のところにある国境の街、サンディエゴ。サンディエゴと言えば、1986年に世界中で大ヒットした映画『トップガン』の撮影場所で有名です。
+            今年は、つい先日7月3日にエディー・マーフィー主演の大ヒット映画『ビバリーヒルズ・コップ』がアメリカで上映されてから40周年という事もあって、Netflixでは『ビバリーヒルズ・コップ』の新シリーズ『ビバリーヒルズ・コップ 4 Axel F』が大ヒットストリーミング中ですが、今Netflixで一番人気の作品です。
         </p>
         <p>
-            トップガンの次回作がささやかれていた2012年の8月19日、監督のトニー・スコット氏がロサンゼルスの南端に位置するサンペドロ港に架かるヴィンセント・トーマス橋から飛び降り自殺をはかり、68歳という若さでこの世を去ってしまいました。<br>その後もトム・クルーズやバル・キルマがトップガンの続編を模索中という話題もあり、『トップガン2』の上映が待ち遠しい今日この頃です。このツアーでは、その偉大なるトニー・スコット監督を追悼して「トップガン」の縁の地を交えながら、サンディエゴの見どころにご案内いたします。
+            そこで、弊社ドリームズ・カム・ツアーズでは、『ビバリーヒルズ・コップ』40周年を記念いたしまして、『ビバリーヒルズ・コップ』ロケ地ツアーを催行中です。
+        </p>
+        <p>
+            我こそは大のビバリーヒルズ・コップファン、エディー・マーフィーファンという方は是非ご参加下さい♪
         </p>
 
         <h2>ロケ地</h2>
@@ -126,8 +129,8 @@
             <div class="arrow left-arrow" onclick="changeImage(-1, currentFlag)">&#9664;</div> <!-- 左矢印 -->
             <div style="text-align: center; width:60%">
                 <img id="modalImage" style="width: 70%;" src="" alt="拡大画像">
-                <div id="imageDescription_penny" style="display: none; color: white; text-align: center;"></div> <!-- 固定の説明文 -->
-                <div id="imageDescription_marveric" style="display: none; color: white; text-align: center;">坂道を下からマーべリック（トム・クルーズ）がバイクで上がってくるシーンで登場します。</div>
+                <div id="imageDescription_tobacco" style="display: none; color: white; text-align: center;"></div> <!-- 固定の説明文 -->
+                <div id="imageDescription_accel" style="display: none; color: white; text-align: center;">『ビバリーヒルズ・コップ』でアクセル・フォーリーのアパートとして使われた建物。<br>友達のマイキーがアパートの踊り場で何者かに殺された。<br>今はメキシコ系移民の低所得者層が住むアパートとして利用されている。</div>
             </div>
             <div class="arrow right-arrow" id="right_arrow"onclick="changeImage(1, currentFlag)">&#9654;</div> <!-- 右矢印 -->
         </div>
@@ -136,12 +139,12 @@
         <!-- 画像をクリックしてモーダルを開く -->
         <div style="display: flex; justify-content: center; align-items: center;">
             <div style="text-align: center; margin-right: 20px;">
-                <p><strong>ペニー(ジェニファー・コネリー)の家</strong></p>
-                <img id="imageToHide" src="ペニー(ジェニファー・コネリー)の家.png" alt="ペニー(ジェニファー・コネリー)の家の画像" onclick="openModal('ペニー(ジェニファー・コネリー)の家.png', 'penny')" style="width: 80%;">
+                <p><strong>密輸タバコのトラックのあった路地</strong></p>
+                <img id="imageToHide" src="密輸たばこのトラックのあった路地.png" alt="密輸たばこのトラックのあった路地の画像" onclick="openModal('密輸たばこのトラックのあった路地.png', 'tobacco')" style="width: 90%;">
             </div>
             <div style="text-align: center;">
-                <p><strong>マーベリックがバイクで上がってきた坂</strong></p>
-                <img id="imageToShow" src="マーベリックがバイクで上がってきた坂.png" alt="マーベリックがバイクで上がってきた坂の画像" onclick="openModal('マーベリックがバイクで上がってきた坂.png', 'marveric')" style="width: 80%;">
+                <p><strong>アクセル・フォーリーのデトロイトのアパート</strong></p>
+                <img id="imageToShow" src="アクセル・フォーリーのデトロイトのアパート.png" alt="アクセル・フォーリーのデトロイトのアパートの画像" onclick="openModal('アクセル・フォーリーのデトロイトのアパート.png', 'accel')" style="width: 80%;">
             </div>
         </div>
         
@@ -206,23 +209,23 @@
         
             <div class="recommendation-images">
                 <div class="recommendation-item">
-                    <img src="ラ・ラ・ランド.png" alt="ラ・ラ・ランドのロケ地" class="recommendation-image">
-                    <p><a href="LaLaLand.html">『ラ・ラ・ランド』</a></p>
+                    <img src="../topgun/トップガン.png" alt="トップガンのロケ地" class="recommendation-image">
+                    <p><a href="../topgun/index.html">『トップガン』</a></p>
                 </div>
             
                 <div class="recommendation-item">
-                    <img src="ワイルドスピード.png" alt="ワイルドスピードのロケ地" class="recommendation-image">
-                    <p><a href="wildspeed.html">『ワイルドスピード』</a></p>
+                    <img src="../wildspeed/ワイルドスピード.png" alt="ワイルドスピードのロケ地" class="recommendation-image">
+                    <p><a href="../wildspeed/index.html">『ワイルドスピード』</a></p>
                 </div>
             
                 <div class="recommendation-item">
-                    <img src="バックトゥザフューチャー.png" alt="バックトゥザフューチャーのロケ地" class="recommendation-image">
-                    <p><a href="backtothefuture.html">『バックトゥザフューチャー』</a></p>
+                    <img src="../backtothefuture/バックトゥザフューチャー.png" alt="バックトゥザフューチャーのロケ地" class="recommendation-image">
+                    <p><a href="../backtothefuture/index.html">『バックトゥザフューチャー』</a></p>
                 </div>
             
                 <div class="recommendation-item">
-                    <img src="ビバリーヒルズ・コップ.png" alt="ビバリーヒルズ・コップのロケ地" class="recommendation-image">
-                    <p><a href="beverly_hills_cop.html">『ビバリーヒルズ・コップ』</a></p>
+                    <img src="../LaLaLand/ラ・ラ・ランド.png" alt="ラ・ラ・ランドのロケ地" class="recommendation-image">
+                    <p><a href="../LaLaLand/index.html">『ラ・ラ・ランド』</a></p>
                 </div>
             </div>
         </div>
@@ -233,12 +236,12 @@
             <p>お申し込みは<a href="contact.html">こちら</a>からお願いいたします。</p>
             <p>お得な情報はlineの公式アカウントからご確認できます</p>
             <a href="https://www.instagram.com/kazimai2010/?locale=ja_JP" target="_blank">
-                <img src="インスタグラムのアイコン.png" alt="Instagram" style="width: 50px; height: 50px;">
+                <img src="../インスタグラムのアイコン.png" alt="Instagram" style="width: 50px; height: 50px;">
             </a>
         </div>
                 
     </div>
 
-    <script src="topgun.js"></script>
+    <script src="beverly_hills_cop.js"></script>
 </body>
 </html>
