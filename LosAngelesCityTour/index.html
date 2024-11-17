@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ロサンゼルス市内観光</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+
+        .tour-details {
+            max-width: 800px; /* 最大幅を設定 */
+            margin: 20px auto; /* 自動マージンで中央揃え */
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .LosAngelesCityTour-image {
+            width: 80%; /* 画像の幅を80%に設定 */
+            height: auto; /* 高さは自動調整 */
+            border-radius: 5px; /* 角を丸くする */
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            line-height: 1.6; /* 行間を調整して読みやすく */
+        }
+
+        .recommendation-list {
+            list-style-type: none; /* デフォルトのリストスタイルを無効に */
+            padding: 0; /* パディングをリセット */
+            display: flex; /* フレックスボックスを使用 */
+            justify-content: space-around; /* 項目の間隔を均等に */
+            margin-top: 10px; /* 上部のマージンを追加 */
+        }
+
+        .recommendation-list li {
+            margin: 0 10px; /* 各項目の間隔を設定 */
+        }
+
+        .recommendation-list a {
+            text-decoration: none; /* リンクの下線を消す */
+            color: #007bff; /* リンクの色 */
+        }
+
+        .recommendation-list a:hover {
+            text-decoration: underline; /* ホバー時に下線を表示 */
+        }
+
+        .recommendation-item {
+            margin-bottom: 20px; /* 各アイテムの間隔を設定 */
+        }
+
+        .recommendation-item img {
+            margin-bottom: 10px; /* 画像の下にスペースを追加 */
+            border-radius: 5px; /* 角を丸くする */
+        }
+
+        /* モーダルのスタイル */
+        .modal {
+            display: none; /* 初期は非表示 */
+            position: fixed; /* 固定位置 */
+            z-index: 1000; /* 他の要素の上に表示 */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* 背景を薄暗くする */
+            justify-content: center; /* 中央揃え */
+            align-items: center; /* 縦方向の中央揃え */
+        }
+
+
+        .close-button {
+            position: absolute; /* モーダル内で位置を調整 */
+            top: 20px; /* 上からの位置 */
+            right: 30px; /* 右からの位置 */
+            background-color: transparent; /* 背景を透明に */
+            border: none; /* ボーダーを無効に */
+            color: white; /* ボタンの色 */
+            font-size: 30px; /* フォントサイズ */
+            cursor: pointer; /* クリック可能なカーソルに */
+        }
+
+        .arrow {
+            cursor: pointer; /* カーソルをポインターに変更 */
+            font-size: 30px; /* 矢印のサイズ */
+            font-weight: bold; /* 太文字にする */
+            margin: 0 20px; /* 左右にマージン */
+            user-select: none; /* 選択できないようにする */
+            vertical-align: middle; /* 縦位置を中央に調整 */
+        }
+        table {
+            width: 100%; /* テーブルの幅を100%に設定 */
+            border-collapse: collapse; /* 枠線を1本に統一 */
+            table-layout: fixed; /* 列幅を固定 */
+        }
+
+        /* テーブルヘッダーのスタイル */
+        th {
+            text-align: left;
+            border: 1px solid #ddd; /* 枠線のスタイル */
+            padding: 10px; /* セル内の余白 */
+            background-color: #f2f2f2; /* 背景色 */
+            width: 33.33%; /* 各列の幅を均等に設定 */
+        }
+
+        /* テーブルデータのスタイル */
+        td {
+            text-align: left;
+            border: 1px solid #ddd; /* 枠線のスタイル */
+            padding: 10px; /* セル内の余白 */
+            width: 33.33%; /* 各列の幅を均等に設定 */
+            vertical-align: top; /* テキストを上揃え */
+            word-wrap: break-word; /* 長いテキストを折り返す */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ヘッダー -->
+    <header>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../tourList.html" class="tours">Tours</a>
+            <a href="../#about">About Us</a>
+            <a href="../#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="tour-details">
+        <h1>ロサンゼルス市内観光</h1>
+        <div style="text-align: center;">
+            <img src="LAX.png" alt="ロサンゼルス市内観光" class="LosAngelesCityTour-image" style="display: block; margin: 0 auto;">
+        </div>
+        <p>
+            ロサンゼルスと言いましても、ディズニーランドがあるアナハイム方面も含めますと、日本の関東平野より少し小さいぐらいの広大な街です。<br>その広大なロサンゼルスの街を、絶対に見逃せない見所や穴場を効率よくご案内するのが、このデラックス市内観光です。<br>映画や洋楽好きなドライバーが、映画の縁の地も含めて、LAの街をご案内いたします。
+        </p>
+        
+
+        <div class="schedule-container">
+    
+            <h2>タイムスケジュール(8時間)</h2>
+            <p class="notice">最小催行人数：4名様から<br>料金：お1人様8時間コース140ドル、10時間コース175ドル</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>時間</th>
+                        <th>場所</th>
+                        <th>詳細</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>09:00</td>
+                        <td>ホテルで待ち合わせ</td>
+                        <td>ご宿泊のホテルまでお向かいに上がります</td>
+                    </tr>
+                    <tr>
+                        <td>10:00~10:30</td>
+                        <td>マリナ・デル･レイ</td>
+                        <td>高級住宅街であり、桃井かおりさんが在住。映画『ロード・オブ・ドッグタウン』では、ハンティントンビーチのスケボー大会の会場として、フィッシャーマンズ・ヴィレッジが登場する。<br>海外ドラマ『ビバリーヒルズ青春白書』や『The O.C.』などでも度々登場する。</td>
+                    </tr>
+                    <tr>
+                        <td>10:30~11:00</td>
+                        <td>ベニス・ビーチ</td>
+                        <td>運河にゴンドラが浮かび、ビーチ沿いのオーシャン・フロント・ウォークには大道芸人や屋台が並ぶ。<br>かつてはディズニーランドに次ぐロサンゼルスの人気観光地で、スケボー発祥の地としても知られる。<br>映画『ロード・オブ・ドッグタウン』『ドッグタウン＆Zボーイズ』の舞台。</tr>
+                    </tr>
+                    <tr>
+                        <td>11:00~11:30</td>
+                        <td>サンタモニカ</td>
+                        <td>桜田淳子さんの歌「サンタモニカの風」がよく似合う、サンタモニカ。<br>映画「フォーレスト・ガンプ～一期一会～」でトム・ハンクスが東海岸から大陸横断マラソンをして、サンタモニカピアをくぐり西海岸に辿り着くシーンで登場する。</td>
+                    </tr>
+                    <tr>
+                        <td>11:30~12:00</td>
+                        <td>センチュリー・シティ</td>
+                        <td>20世紀フォックス社のスタジオがある。<br>80年代は「ダイ･ハード」、「リーサル・ウェポン2」、「カリブの暑い夜」などの映画にも度々登場し、高層ビルが立ち並ぶオフィス街である。</td>
+                    </tr>
+                    <tr>
+                        <td>12:00~12:30</td>
+                        <td>ビバリーヒルズ</td>
+                        <td>「ビバリーヒルズ青春白書」のオープニングにも必ず登場する有名な看板。<br>背の高い立派な椰子の木が整然と道の左右に立ち並び、有名人の豪邸が次々と目に入る。<br>映画「プリティウーマン」でおなじみのロデオドライブで買い物やビバリーウィルシャーホテルでお茶したり、映画の世界を満喫できます。</td>
+                    </tr>
+                    <tr>
+                        <td>12:30~13:00</td>
+                        <td>ウエスト・ハリウッド</td>
+                        <td>往年のアメリカのドラマ「77サンセットストリップ」の舞台になったサンセット通りには、たくさんのクラブがひしめく。<br>ロックファンにはたまらないクラブやライブハウスがいくつもあり、夜はライブを見に行かれては。</td>
+                    </tr>
+                    <tr>
+                        <td>13:00~13:30</td>
+                        <td>チャイニーズ・シアター</td>
+                        <td>ハリウッドを象徴するランドマークのひとつ。<br>ここにあのハリウッドスター達の手形・足型が敷き詰められています。<br>隣は、オスカーの舞台、コダック･シアター。お土産物屋さんも多数あります。</td>
+                    </tr>
+                    <tr>
+                        <td>13:30~14:00</td>
+                        <td>「あなたがスター」壁画</td>
+                        <td>「あなたがスター」という題で、通りを歩いているあなた、日常にドラマがあるという意味だそうです。<br>元々は、この店の宣伝用に描かれたものでしたが、次第にハリウッドサインに並ぶぐらい、ハリウッドの名所になりつつあります。</td>
+                    </tr>
+                    <tr>
+                        <td>14:00~14:30</td>
+                        <td>ハリウッド･サイン</td>
+                        <td>ハリウッドと言えば、映画の都。チャイニーズシアターにはたくさんのスター達の手形や足型があり、オスカーのコダックシアターもある。<br>お土産屋さんやDFSもあり、ショッピングやダイニングにも便利です。</td>
+                    </tr>
+                    <tr>
+                        <td>14:30~15:00</td>
+                        <td>ドジャースタジアム</td>。
+                        <td>1995年にメジャーのパイオニア的存在の野茂英雄投手がドジャースに入団してから、石井一久、木田優夫、中村紀洋、斎藤隆、黒田浩樹など日本人メジャーリーガーにはなじみのある球団。<br>試合のない日も、ギフトショップで買い物したり、最上階のトップデッキから球場を一望できます。</td>
+                    </tr>
+                    <tr>
+                        <td>15:00~15:30</td>
+                        <td>ダウンタウン</td>
+                        <td>ダウンタウンロサンゼルスは美しい摩天楼が輝き、たくさんのビジネスマンや人々が闊歩する活気のある町。<br>ミュージックセンター、ディズニーコンサートホール、グランドセントラルマーケット、MOCA、LAライブ、ステイプルズセンター、コンベンションセンターなどで、毎日たくさんのイベントが行われている。</td>
+                    </tr>
+                    <tr>
+                        <td>15:30~16:30</td>
+                        <td>リトル東京</td>
+                        <td>1800年代の終わりに日系人が作った街。以来、日系人や日本人の憩いの場として、親しまれてきました。特に、全米日系人博物館や杉原千畝、二宮尊徳、エリソン鬼塚、ゴーフォーブロークの記念碑など、日本人に縁のある場所をぜひ訪れていただきたい。</td>
+                    </tr>
+                    <tr>
+                        <td>17:00</td>
+                        <td>ご宿泊のホテル</td>
+                        <td>ご宿泊のホテルで解散になります</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="recommendations">
+            <h2>他のお勧めロケ地ツアー</h2>
+        
+            <div class="recommendation-images">
+                <div class="recommendation-item">
+                    <img src="../topgun/トップガン.png" alt="トップガンのロケ地" class="recommendation-image">
+                    <p><a href="../topgun/index.html">『トップガン』</a></p>
+                </div>
+            
+                <div class="recommendation-item">
+                    <img src="../wildspeed/ワイルドスピード.png" alt="ワイルドスピードのロケ地" class="recommendation-image">
+                    <p><a href="../wildspeed/index.html">『ワイルドスピード』</a></p>
+                </div>
+            
+                <div class="recommendation-item">
+                    <img src="../backtothefuture/バックトゥザフューチャー.png" alt="バックトゥザフューチャーのロケ地" class="recommendation-image">
+                    <p><a href="../backtothefuture/index.html">『バックトゥザフューチャー』</a></p>
+                </div>
+            
+                <div class="recommendation-item">
+                    <img src="../beverlyHillsCop/ビバリーヒルズ・コップ.png" alt="ビバリーヒルズ・コップのロケ地" class="recommendation-image">
+                    <p><a href="../beverlyHillsCop/index.html">『ビバリーヒルズ・コップ』</a></p>
+                </div>
+            </div>
+        </div>
+               
+
+        <div>
+            <h2>お申し込み</h2>
+            <p>お申し込みは<a href="contact.html">こちら</a>からお願いいたします。</p>
+            <p>お得な情報はlineの公式アカウントからご確認できます</p>
+            <a href="https://www.instagram.com/kazimai2010/?locale=ja_JP" target="_blank">
+                <img src="../インスタグラムのアイコン.png" alt="Instagram" style="width: 50px; height: 50px;">
+            </a>
+        </div>
+                
+    </div>
+
+    <script src="starwars.js"></script>
+</body>
+</html>

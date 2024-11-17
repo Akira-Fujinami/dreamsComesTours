@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ハリウッドスター豪邸ツアー</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+
+        .tour-details {
+            max-width: 800px; /* 最大幅を設定 */
+            margin: 20px auto; /* 自動マージンで中央揃え */
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .hollywoodstar-image {
+            width: 80%; /* 画像の幅を80%に設定 */
+            height: auto; /* 高さは自動調整 */
+            border-radius: 5px; /* 角を丸くする */
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            line-height: 1.6; /* 行間を調整して読みやすく */
+        }
+
+        /* モーダルのスタイル */
+        .modal {
+            display: none; /* 初期は非表示 */
+            position: fixed; /* 固定位置 */
+            z-index: 1000; /* 他の要素の上に表示 */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* 背景を薄暗くする */
+            justify-content: center; /* 中央揃え */
+            align-items: center; /* 縦方向の中央揃え */
+        }
+
+
+        .close-button {
+            position: absolute; /* モーダル内で位置を調整 */
+            top: 20px; /* 上からの位置 */
+            right: 30px; /* 右からの位置 */
+            background-color: transparent; /* 背景を透明に */
+            border: none; /* ボーダーを無効に */
+            color: white; /* ボタンの色 */
+            font-size: 30px; /* フォントサイズ */
+            cursor: pointer; /* クリック可能なカーソルに */
+        }
+
+        .arrow {
+            cursor: pointer; /* カーソルをポインターに変更 */
+            font-size: 30px; /* 矢印のサイズ */
+            font-weight: bold; /* 太文字にする */
+            margin: 0 20px; /* 左右にマージン */
+            user-select: none; /* 選択できないようにする */
+            vertical-align: middle; /* 縦位置を中央に調整 */
+        }
+
+        table {
+            width: 100%; /* テーブルの幅を100%に設定 */
+            border-collapse: collapse; /* 枠線を1本に統一 */
+            table-layout: fixed; /* 列幅を固定 */
+        }
+
+        /* テーブルヘッダーのスタイル */
+        th {
+            text-align: left;
+            border: 1px solid #ddd; /* 枠線のスタイル */
+            padding: 10px; /* セル内の余白 */
+            background-color: #f2f2f2; /* 背景色 */
+            width: 33.33%; /* 各列の幅を均等に設定 */
+        }
+
+        /* テーブルデータのスタイル */
+        td {
+            text-align: left;
+            border: 1px solid #ddd; /* 枠線のスタイル */
+            padding: 10px; /* セル内の余白 */
+            width: 33.33%; /* 各列の幅を均等に設定 */
+            vertical-align: top; /* テキストを上揃え */
+            word-wrap: break-word; /* 長いテキストを折り返す */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ヘッダー -->
+    <header>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../tourList.html" class="tours">Tours</a>
+            <a href="../#about">About Us</a>
+            <a href="../#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="tour-details">
+        <h1>ハリウッドスター豪邸ツアー</h1>
+        <div style="text-align: center;">
+            <img src="HollyWoodStar.png" alt="ハリウッドスター豪邸ツアー" class="hollywoodstar-image" style="display: block; margin: 0 auto;">
+        </div>
+        <p>
+            未来都市の暗い街並みや、ネオンが輝くレトロフューチャーな風景。『ブレードランナー』の世界は、映画を超えて多くの人々の想像をかき立てる場所として知られています。<br>このツアーでは、あのディストピアな世界観をリアルに感じられるロケ地を巡り、映画のシーンを思い起こす特別な体験をご提供します。シティスケープの中に隠された名シーンや、未来都市に漂う不思議な雰囲気をぜひ体感してください。<br>『ブレードランナー』の世界へ、一緒に踏み出してみませんか？
+        </p>
+        
+
+        <div class="schedule-container">
+    
+            <h2>タイムスケジュール</h2>
+            <p class="notice">あくまでサンプルですので、お客様のご要望に合わせて柔軟に対応いたします。
+            <br>ツアー時間は4時間程度になります</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>時間</th>
+                        <th>場所</th>
+                        <th>詳細</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>10:00</td>
+                        <td>ホテルで待ち合わせ</td>
+                        <td>ご宿泊のホテルまでお向かいに上がります</td>
+                    </tr>
+                    <tr>
+                        <td>11:00</td>
+                        <td>チャイニーズシアター</td>
+                        <td>スターの手形、足型を徹底解説！自分で行ってもよく分からない殿堂入りしたスター達を彼らの代表作を交えながら、懇切丁寧に解説いたします❣</td>
+                    </tr>
+                    <tr>
+                        <td>12:00</td>
+                        <td>マジック・キャッスル</td>
+                        <td>日本の有名マジシャン、ハリウッドの大物俳優など、5千名程の会員が名を連ねる奇術専門の会員制クラブ。<br>日本人では、残念ながら今年81歳で亡くなられたShimadaこと、Haruo ShimadaさんやShoot Ogawaさんなどがメンバーだ。<br>他にもスティーブン・スピルバーグやモハメド・アリなども会員に名を連ねていた。</tr>
+                    </tr>
+                    <tr>
+                        <td>13:30</td>
+                        <td>山城レストラン</td>
+                        <td>「さよなら」「60セコンズ」「チャーリーズエンジェル」「007は二度死ぬ」のロケ地となったレストラン。</td>
+                    </tr>
+                    <tr>
+                        <td>18:00</td>
+                        <td>ジャニス･ジョップリンが亡くなったモーテル</td>
+                        <td>1970年10月4日、遺作となったアルバム「パール」のレコーディング中に、滞在していたモーテルで、ドラッグの過剰摂取により、死去。享年27歳。</td>
+                    </tr>
+                    <tr>
+                        <td>19:00</td>
+                        <td>『陽気なネルソン』の家</td>
+                        <td>1960年代にNHKで放送されたアメリカ人の両親と高校生の2人息子の生活を描いた明るいホームドラマ。<br>次男のリッキー・ネルソンは歌手としても成功し、兄のデービッドと一緒にマイケル・ジャクソンも一時期通ったと言われる近くのガードナーストリート小に通った。</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="recommendations">
+            <h2>他のお勧めロケ地ツアー</h2>
+        
+            <div class="recommendation-images">
+                <div class="recommendation-item">
+                    <img src="../backtothefuture/バックトゥザフューチャー.png" alt="バックトゥザフューチャーのロケ地" class="recommendation-image">
+                    <p><a href="../backtothefuture\index.html">『バックトゥザフューチャー』</a></p>
+                </div>
+            
+                <div class="recommendation-item">
+                    <img src="../wildspeed\ワイルドスピード.png" alt="ワイルドスピードのロケ地" class="recommendation-image">
+                    <p><a href="../wildspeed\index.html">『ワイルドスピード』</a></p>
+                </div>
+            
+                <div class="recommendation-item">
+                    <img src="../LaLaLand/ラ・ラ・ランド.png" alt="ラ・ラ・ランドのロケ地" class="recommendation-image">
+                    <p><a href="../LaLaLand/index.html">『ラ・ラ・ランド』</a></p>
+                </div>
+            
+                <div class="recommendation-item">
+                    <img src="../beverlyHillsCop/ビバリーヒルズ・コップ.png" alt="ビバリーヒルズ・コップのロケ地" class="recommendation-image">
+                    <p><a href="../beverlyHillsCop/ビバリーヒルズ・コップ.png">『ビバリーヒルズ・コップ』</a></p>
+                </div>
+            </div>
+        </div>
+               
+
+        <div>
+            <h2>お申し込み</h2>
+            <p>お申し込みは<a href="contact.html">こちら</a>からお願いいたします。</p>
+            <p>お得な情報はlineの公式アカウントからご確認できます</p>
+            <a href="https://www.instagram.com/kazimai2010/?locale=ja_JP" target="_blank">
+                <img src="インスタグラムのアイコン.png" alt="Instagram" style="width: 50px; height: 50px;">
+            </a>
+        </div>
+                
+    </div>
+
+    <script src="bladeRunner.js"></script>
+</body>
+</html>
