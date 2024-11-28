@@ -170,17 +170,6 @@ body {
     background-color: #007bff;
 }
 
-.tour-image {
-    position: absolute;
-    top: 110%; /* タイトルの下に表示 */
-    left: 0;
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    opacity: 0; /* 初期状態は非表示 */
-    transition: opacity 0.5s ease-in-out; /* フェードインのアニメーション */
-    z-index: 10;
-}
 
 h2:hover + .tour-image {
     opacity: 1; /* マウスオーバー時に表示 */

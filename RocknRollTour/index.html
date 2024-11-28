@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LA Rock'n Roll ツアー</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+
+        .tour-details {
+            max-width: 800px; /* 最大幅を設定 */
+            margin: 20px auto; /* 自動マージンで中央揃え */
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .RocknRoll-image {
+            width: 80%; /* 画像の幅を80%に設定 */
+            height: auto; /* 高さは自動調整 */
+            border-radius: 5px; /* 角を丸くする */
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            line-height: 1.6; /* 行間を調整して読みやすく */
+        }
+
+        .recommendation-list {
+            list-style-type: none; /* デフォルトのリストスタイルを無効に */
+            padding: 0; /* パディングをリセット */
+            display: flex; /* フレックスボックスを使用 */
+            justify-content: space-around; /* 項目の間隔を均等に */
+            margin-top: 10px; /* 上部のマージンを追加 */
+        }
+
+        .recommendation-list li {
+            margin: 0 10px; /* 各項目の間隔を設定 */
+        }
+
+        .recommendation-list a {
+            text-decoration: none; /* リンクの下線を消す */
+            color: #007bff; /* リンクの色 */
+        }
+
+        .recommendation-list a:hover {
+            text-decoration: underline; /* ホバー時に下線を表示 */
+        }
+
+        .recommendation-item {
+            margin-bottom: 20px; /* 各アイテムの間隔を設定 */
+        }
+
+        .recommendation-item img {
+            margin-bottom: 10px; /* 画像の下にスペースを追加 */
+            border-radius: 5px; /* 角を丸くする */
+        }
+
+        .spot {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- ヘッダー -->
+    <header>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../tourList.html" class="tours">Tours</a>
+            <a href="../#about">About Us</a>
+            <a href="../#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="tour-details">
+        <h1>LA Rock'n Roll ツアー</h1>
+        <div style="text-align: center;">
+            <img src="究極のロックンロールツアー.png" alt="究極のロックンロールツアー" class="RocknRoll-image" style="display: block; margin: 0 auto;">
+        </div>
+        <p>
+            <p>ロサンゼルスは、50年代から現在まで多くのロックやポップスアーティストに愛された地です。このツアーでは、ビーチ・ボーイズ、ドアーズ、ラモーンズからガンズ、レッチリ、リンキンパークなど、幅広いアーティストゆかりの地を訪れます。<br>
+                音楽ファンやロック好きにはたまらない、この特別な体験を一緒に楽しみましょう！</p>
+        </p>
+
+        <section id="spots">
+            <h2>訪問スポット</h2>
+            <div class="spot">
+                <img src="ランディーズ・ドーナッツ.png" alt="ランディーズ・ドーナッツ" style="display: block; margin: 0 auto; width: 50%">
+                <h3 style="text-align: center;">ランディーズ・ドーナッツ</h3>
+                <p>多くのミュージックビデオに登場する有名なドーナッツ屋さん。BTSの「ダイナマイト」にもインスパイアされた場所です。</p>
+            </div>
+            <div class="spot">
+                <img src="ザ・ビーチ・ボーイズの生家.png" alt="ビーチ・ボーイズの生家" style="display: block; margin: 0 auto; width: 50%">
+                <h3 style="text-align: center;">ザ・ビーチ・ボーイズの生家</h3>
+                <p>カリフォルニアの歴史的ランドマークにも指定されたビーチ・ボーイズの生家跡地を訪問します。</p>
+            </div>
+            <div class="spot">
+                <img src="ジム・モリソンの壁画.png" alt="ジム・モリソンの壁画" style="display: block; margin: 0 auto; width: 50%">
+                <h3 style="text-align: center;">ジム・モリソンの壁画</h3>
+                <p>ドアーズのボーカル、ジム・モリソンの縁の地を訪れ、アート・ロックの世界に触れましょう。</p>
+            </div>
+            <div class="additional-spots">
+                <h3>その他の訪問例</h3>
+                <ul>
+                    <li>ヴァイパー・ルーム（リヴァー・フェニックスが最後に訪れたクラブ）</li>
+                    <li>ハリウッド・ボウル（ビートルズが歴史的ライブを行った会場）</li>
+                    <li>キャピトル・レコード（ロサンゼルスの音楽の象徴的建物）</li>
+                    <li>トゥルバドール（エルトン・ジョンがアメリカデビューを飾ったクラブ）</li>
+                    <li>ウィスキー・ア・ゴー・ゴー（多くの伝説的ロックバンドがデビューしたライブハウス）</li>
+                    <li>レインボー・バー＆グリル（ロックミュージシャンの溜まり場）</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="schedule-container">
+    
+            <h2>タイムスケジュール(例)</h2>
+            <p class="notice">あくまでサンプルですので、お客様のご要望に合わせて柔軟に対応いたします。<br>他のロケ地ツアーと併せてご案内することも可能ですので、何なりとお申し付けください。
+            <br>ツアー時間は5時間～8時間になります</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>時間</th>
+                        <th>活動</th>
+                        <th>場所</th>
+                        <th>詳細</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>10:00</td>
+                        <td>ホテルで待ち合わせ</td>
+                        <td>ご宿泊のホテル</td>
+                        <td>ご宿泊のホテルまでお向かいに上がります</td>
+                    </tr>
+                    <tr>
+                        <td>11:00</td>
+                        <td>ワイスピのロケ地ツアー</td>
+                        <td>ロサンゼルス</td>
+                        <td>ワイスピのみならずLAの見所をご案内！！</td>
+                    </tr>
+                    <tr>
+                        <td>12:00</td>
+                        <td>ランチ</td>
+                        <td>現地のレストラン</td>
+                        <td>お勧めのレストランをご案内します</tr>
+                    </tr>
+                    <tr>
+                        <td>13:30</td>
+                        <td>ワイスピのロケ地ツアー</td>
+                        <td>ロサンゼルス</td>
+                        <td>午後も張り切って行きましょう💪</td>
+                    </tr>
+                    <tr>
+                        <td>18:00</td>
+                        <td>夕食</td>
+                        <td>現地のレストラン</td>
+                        <td>お勧めのレストランをご案内します</td>
+                    </tr>
+                    <tr>
+                        <td>19:00</td>
+                        <td>ホテルで解散</td>
+                        <td>宿泊ホテル</td>
+                        <td>ご宿泊のホテルで解散になります</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="recommendations">
+            <h2>他のお勧めロケ地ツアー</h2>
+        
+            <div class="recommendation-images">
+                <div class="recommendation-item">
+                    <img src="../topgun/トップガン.png" alt="トップガンのロケ地" class="recommendation-image">
+                    <p><a href="../topgun/index.html">『トップガン』</a></p>
+                </div>
+            
+                <div class="recommendation-item">
+                    <img src="../wildspeed/ワイルドスピード.png" alt="ワイルドスピードのロケ地" class="recommendation-image">
+                    <p><a href="../wildspeed/index.html">『ワイルドスピード』</a></p>
+                </div>
+            
+                <div class="recommendation-item">
+                    <img src="../backtothefuture/バックトゥザフューチャー.png" alt="バックトゥザフューチャーのロケ地" class="recommendation-image">
+                    <p><a href="../backtothefuture/index.html">『バックトゥザフューチャー』</a></p>
+                </div>
+            
+                <div class="recommendation-item">
+                    <img src="../beverlyHillsCop/ビバリーヒルズ・コップ.png" alt="ビバリーヒルズ・コップのロケ地" class="recommendation-image">
+                    <p><a href="../beverlyHillsCop/index.html">『ビバリーヒルズ・コップ』</a></p>
+                </div>
+            </div>
+        </div>
+               
+
+        <div>
+            <h2>お申し込み</h2>
+            <p>お申し込みは<a href="contact.html">こちら</a>からお願いいたします。</p>
+            <p>お得な情報はlineの公式アカウントからご確認できます</p>
+            <a href="https://www.instagram.com/kazimai2010/?locale=ja_JP" target="_blank">
+                <img src="インスタグラムのアイコン.png" alt="Instagram" style="width: 50px; height: 50px;">
+            </a>
+        </div>
+                
+    </div>
+
+    <script src="BeverlyHillsLocation.js"></script>
+</body>
+</html>
