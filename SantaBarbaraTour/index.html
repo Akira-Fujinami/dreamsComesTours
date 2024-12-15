@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サンタバーバラ＆ソルバング一観光ツアー</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .tour-details {
+            max-width: 800px; /* 最大幅を設定 */
+            margin: 20px auto; /* 自動マージンで中央揃え */
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .tour-header {
+            display: flex; /* フレックスボックスを有効に */
+            align-items: center; /* 縦方向のセンタリング */
+            justify-content: center; /* 水平方向のセンタリング */
+            text-align: center; /* テキストを中央揃え */
+        }
+
+        .dogers-image {
+            width: 60%; /* 画像の幅を80%に設定 */
+            height: auto; /* 高さは自動調整 */
+            border-radius: 5px; /* 角を丸くする */
+        }
+
+        .arrow {
+            cursor: pointer; /* カーソルをポインターに変更 */
+            font-size: 30px; /* 矢印のサイズ */
+            font-weight: bold; /* 太文字にする */
+            margin: 0 20px; /* 左右にマージン */
+            user-select: none; /* 選択できないようにする */
+            vertical-align: middle; /* 縦位置を中央に調整 */
+        }
+
+        h1 {
+            color: #333;
+            text-shadow: 2px 2px 4px rgba(0, 0, 255, 0.5);
+        }
+
+        p {
+            line-height: 1.6; /* 行間を調整して読みやすく */
+        }
+
+        .image-title {
+            text-align: center; /* 中央揃え */
+            font-weight: bold; /* 太文字 */
+            margin: 5px 0; /* 上下にマージンを追加 */
+            font-size: 18px; /* フォントサイズを大きく */
+            color: #333; /* 色を設定 */
+            text-shadow: 2px 2px 4px rgba(0, 0, 255, 0.5);
+        }
+    </style>
+    <script>
+        let currentImageIndex = 0; // 現在の画像インデックス
+        const images = [
+            "ペリカン.png", // 画像のパスを指定
+            "クラムチャウダー.png", // 追加の画像
+            "サンタイネツ山脈.png"  // 追加の画像
+        ];
+
+        function updateImage() {
+            const imageElement = document.getElementById("dogersImage");
+            imageElement.src = images[currentImageIndex];
+            const titleElement = document.getElementById("imageTitle");
+            titleElement.innerText = imageTitles[currentImageIndex]; // タイトルを更新
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length; // 次の画像に移る
+            updateImage();
+        }
+
+        function previousImage() {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length; // 前の画像に移る
+            updateImage();
+        }
+
+        const imageTitles = [
+            "ペリカンがお出迎え", // 画像1のタイトル
+            "超おいしいクラムチャウダー", // 画像2のタイトル
+            "サンタイネツ山脈"  // 画像3のタイトル
+        ];
+    </script>
+</head>
+<body>
+
+    <!-- ヘッダー -->
+    <header>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../tourList.html" class="tours">Tours</a>
+            <a href="../#about">About Us</a>
+            <a href="../#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="tour-details">
+        <div class="tour-header">
+            <h1>サンタバーバラ＆ソルバング一観光ツアー</h1>
+        </div>
+        <div style="text-align: center;">
+            <img id="dogersImage" src="サンタバーバラ.png" alt="サンタバーバラ" class="dogers-image" style="display: block; margin: 0 auto;">
+            <br>
+            <div class="image-title" id="imageTitle">サンタバーバラ</div>
+            <span class="arrow" onclick="previousImage()">&lt;</span>
+            <span class="arrow" onclick="nextImage()">&gt;</span>
+        </div>
+
+        <section class="section">
+            <h2>ツアー詳細</h2>
+            <ul>
+                <li><strong>催行日：</strong>  ご希望の日程に合わせます。</li>
+                <li><strong>催行時間：</strong>  約12時間</li>
+                <li><strong>料金： </strong> お一人様150ドル</li>
+                <li><strong>料金に含まれるもの： </strong> 往復の送迎代、日本語ガイド代。</li>
+                <li><strong>料金に含まれないもの：</strong>  お食事代、駐車場代、ドライバーチップ</li>
+                <li><strong>支払方法： </strong> 現金またはクレジットカード（手数料3％）。</li>
+                <li><strong>キャンセルポリシー： </strong> ツアー催行日の2週間まではキャンセル料はかかりませんが、2週間を過ぎますと、100％のキャンセル料がかかりますので、ご了承ください。</li>
+            </ul>
+        </section>
+
+        <div class="schedule-container">
+    
+            <h2>タイムスケジュール</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>時間</th>
+                        <th>活動</th>
+                        <th>場所</th>
+                        <th>詳細</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>08:00</td>
+                        <td>ホテルで待ち合わせ</td>
+                        <td>ご宿泊のホテル</td>
+                        <td>ご宿泊のホテルまでお向かいに上がります</td>
+                    </tr>
+                    <tr>
+                        <td>10:00</td>
+                        <td>サンタバーバラ到着</td>
+                        <td>サンタバーバラ</td>
+                        <td>ペリカンやアザラシなどを見学できます。</td>
+                    </tr>
+                    <tr>
+                        <td>11:00</td>
+                        <td>ランチ</td>
+                        <td>現地のレストラン</td>
+                        <td>シーフードレストランやフィッシュ＆チップスが<br>おいしいレストランなどにご案内いたします。</tr>
+                    </tr>
+                    <tr>
+                        <td>12:15</td>
+                        <td>ショッピング</td>
+                        <td>ステート通り</td>
+                        <td>有名ブランドの店からディスカントストアまで<br>あらゆるジャンルのお買い物が楽しめます。</td>
+                    </tr>
+                    <tr>
+                        <td>13:30</td>
+                        <td>サンタバーバラ裁判所見学</td>
+                        <td>サンタバーバラ裁判所</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>14:00</td>
+                        <td>サンタバーバラミッション見学</td>
+                        <td>サンタバーバラミッション</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>15:30</td>
+                        <td>元マイケル・ジャクソンの家に案内</td>
+                        <td>ネバーランド</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>16:00</td>
+                        <td>ロス・オリボスに案内</td>
+                        <td>ロス・オリボス</td>
+                        <td>松嶋奈々子さん主演のドラマ『百年の物語』や映画『サイドウェイズ』にも登場します。</td>
+                    </tr>
+                    <tr>
+                        <td>16:30</td>
+                        <td>ソルバング到着</td>
+                        <td>デンマーク村</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>20:00</td>
+                        <td>ロサンゼルスホテル到着</td>
+                        <td>ロサンゼルス</td>
+                        <td>お疲れ様でした！！</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="recommendations">
+            <h2>他のお勧めロケ地ツアー</h2>
+        
+            <div class="recommendation-item">
+                <img src="ドジャースタジアムツアー2.png" alt="ドジャースタジアムツアー" class="recommendation-image" style="width: 23%; height: auto; border-radius: 5px;">
+                <p><a href="doger_studium.html">ドジャースタジアムツアー</a></p>
+            </div>
+        </div>
+               
+        <div>
+            <h2>お申し込み・お問い合わせ</h2>
+            <p>お申し込み・お問い合わせは<a href="contact.html">こちら</a>からお願いいたします。</p>
+            <p>お得な情報はlineの公式アカウントからご確認できます</p>
+            <a href="https://www.instagram.com/kazimai2010/?locale=ja_JP" target="_blank">
+                <img src="インスタグラムのアイコン.png" alt="Instagram" style="width: 50px; height: 50px;">
+            </a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
