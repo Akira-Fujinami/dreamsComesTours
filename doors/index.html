@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ドアーズの追悼ツアー</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+
+        .tour-details {
+            max-width: 800px; /* 最大幅を設定 */
+            margin: 20px auto; /* 自動マージンで中央揃え */
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .Doors-image {
+            width: 80%; /* 画像の幅を80%に設定 */
+            height: auto; /* 高さは自動調整 */
+            border-radius: 5px; /* 角を丸くする */
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            line-height: 1.6; /* 行間を調整して読みやすく */
+        }
+
+        table {
+            width: 100%; /* テーブルの幅を100%に設定 */
+            border-collapse: collapse; /* 枠線を1本に統一 */
+            table-layout: fixed; /* 列幅を固定 */
+        }
+
+        /* テーブルヘッダーのスタイル */
+        th {
+            text-align: left;
+            border: 1px solid #ddd; /* 枠線のスタイル */
+            padding: 10px; /* セル内の余白 */
+            background-color: #f2f2f2; /* 背景色 */
+            width: 33.33%; /* 各列の幅を均等に設定 */
+        }
+
+        /* テーブルデータのスタイル */
+        td {
+            text-align: left;
+            border: 1px solid #ddd; /* 枠線のスタイル */
+            padding: 10px; /* セル内の余白 */
+            width: 33.33%; /* 各列の幅を均等に設定 */
+            vertical-align: top; /* テキストを上揃え */
+            word-wrap: break-word; /* 長いテキストを折り返す */
+        }
+
+        .spot {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 15px;
+        }
+
+        .spot img {
+            width: 40%;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+
+        .spot h3 {
+            margin-top: 0;
+            color: #d14d72;
+        }
+
+        .additional-spots ul {
+            list-style: square;
+            margin: 0;
+            padding: 0;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ヘッダー -->
+    <header>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../tourList.html" class="tours">Tours</a>
+            <a href="../#about">About Us</a>
+            <a href="../#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="tour-details">
+        <h1>ドアーズの追悼ツアー</h1>
+        <div style="text-align: center;">
+            <img src="ドアーズ.png" alt="ドアーズの追悼ツアー" class="Doors-image" style="display: block; margin: 0 auto;">
+        </div>
+        <p>
+            ドアーズの伝説を体感できる特別なツアーです。<br>
+            ジム・モリソンの壁画や彼が住んだ家、彼らの名曲が生まれた場所など、ドアーズにゆかりのあるスポットを巡ります。<br>
+            ツアーの最後には、ドアーズ追悼バンド「ワイルド・チャイルド」のライブを鑑賞し、まるで彼らの時代にタイムスリップしたような体験をお届けします。
+        </p>
+        
+
+        <section id="spots">
+            <h2>訪問スポット</h2>
+            
+            <div class="spot">
+                <h3>ジム・モリソンの壁画</h3>
+                <p>
+                    ドアーズの象徴ともいえる壁画。この場所はファンにとって聖地であり、訪れる人々を惹きつけ続けています。
+                </p>
+            </div>
+    
+            <div class="spot">
+                <h3>ソウルキッチンのモデルとなった場所</h3>
+                <p>
+                    ジム・モリソンが「ソウルキッチン」を書くきっかけとなったレストランがあった場所。現在は再開発されていますが、歴史を感じることができます。
+                </p>
+            </div>
+    
+            <div class="spot">
+                <h3>ウィスキー・ア・ゴー・ゴー</h3>
+                <p>
+                    ドアーズがハウスバンドを務めていた伝説のクラブ。ロックの歴史に名を刻む場所です。
+                </p>
+            </div>
+    
+            <div class="spot">
+                <h3>ジムが最後に住んだ家</h3>
+                <p>
+                    ジム・モリソンがアメリカで最後に住んだ家。今ではファンが宿泊できる特別な場所になっています。
+                </p>
+            </div>
+    
+            <div class="spot">
+                <h3>アルタ・シエネガ・モーテル</h3>
+                <p>
+                    ジム・モリソンが過ごした部屋が「ジム・モリソン・ルーム」として知られるモーテル。部屋の壁にはファンからのメッセージが溢れています。
+                </p>
+            </div>
+        </section>
+
+        <div class="recommendations">
+            <h2>他のお勧めロケ地ツアー</h2>
+        
+            <div class="recommendation-images">
+                <div class="recommendation-item">
+                    <img src="../backtothefuture/バックトゥザフューチャー.png" alt="バックトゥザフューチャーのロケ地" class="recommendation-image">
+                    <p><a href="../backtothefuture\index.html">『バックトゥザフューチャー』</a></p>
+                </div>
+            
+                <div class="recommendation-item">
+                    <img src="../wildspeed\ワイルドスピード.png" alt="ワイルドスピードのロケ地" class="recommendation-image">
+                    <p><a href="../wildspeed\index.html">『ワイルドスピード』</a></p>
+                </div>
+            
+                <div class="recommendation-item">
+                    <img src="../LaLaLand/ラ・ラ・ランド.png" alt="ラ・ラ・ランドのロケ地" class="recommendation-image">
+                    <p><a href="../LaLaLand/index.html">『ラ・ラ・ランド』</a></p>
+                </div>
+            
+                <div class="recommendation-item">
+                    <img src="../beverlyHillsCop/ビバリーヒルズ・コップ.png" alt="ビバリーヒルズ・コップのロケ地" class="recommendation-image">
+                    <p><a href="../beverlyHillsCop/ビバリーヒルズ・コップ.png">『ビバリーヒルズ・コップ』</a></p>
+                </div>
+            </div>
+        </div>
+               
+
+        <div>
+            <h2>お申し込み</h2>
+            <p>お申し込みは<a href="contact.html">こちら</a>からお願いいたします。</p>
+            <p>お得な情報はlineの公式アカウントからご確認できます</p>
+            <a href="https://www.instagram.com/kazimai2010/?locale=ja_JP" target="_blank">
+                <img src="インスタグラムのアイコン.png" alt="Instagram" style="width: 50px; height: 50px;">
+            </a>
+        </div>
+                
+    </div>
+
+    <script src="bladeRunner.js"></script>
+</body>
+</html>
