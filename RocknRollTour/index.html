@@ -61,11 +61,26 @@
         }
 
         .spot {
-            background: white;
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 15px;
+        }
+        .spot img {
+            width: 40%;
             border-radius: 8px;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-right: 20px;
+        }
+
+        .spot h3 {
+            margin-top: 0;
+            color: #d14d72;
+        }
+        .additional-spots ul {
+            list-style: square;
+            margin: 0;
+            padding: 0;
+            padding-left: 20px;
         }
 
     </style>
@@ -96,18 +111,24 @@
             <h2>訪問スポット</h2>
             <div class="spot">
                 <img src="ランディーズ・ドーナッツ.png" alt="ランディーズ・ドーナッツ" style="display: block; margin: 0 auto; width: 50%">
-                <h3 style="text-align: center;">ランディーズ・ドーナッツ</h3>
-                <p>多くのミュージックビデオに登場する有名なドーナッツ屋さん。BTSの「ダイナマイト」にもインスパイアされた場所です。</p>
+                <div>
+                    <h3 style="text-align: center;">ランディーズ・ドーナッツ</h3>
+                    <p>多くのミュージックビデオに登場する有名なドーナッツ屋さん。BTSの「ダイナマイト」にもインスパイアされた場所です。</p>
+                </div>
             </div>
             <div class="spot">
                 <img src="ザ・ビーチ・ボーイズの生家.png" alt="ビーチ・ボーイズの生家" style="display: block; margin: 0 auto; width: 50%">
-                <h3 style="text-align: center;">ザ・ビーチ・ボーイズの生家</h3>
-                <p>カリフォルニアの歴史的ランドマークにも指定されたビーチ・ボーイズの生家跡地を訪問します。</p>
+                <div>
+                    <h3 style="text-align: center;">ザ・ビーチ・ボーイズの生家</h3>
+                    <p>カリフォルニアの歴史的ランドマークにも指定されたビーチ・ボーイズの生家跡地を訪問します。</p>
+                </div>
             </div>
             <div class="spot">
                 <img src="ジム・モリソンの壁画.png" alt="ジム・モリソンの壁画" style="display: block; margin: 0 auto; width: 50%">
-                <h3 style="text-align: center;">ジム・モリソンの壁画</h3>
-                <p>ドアーズのボーカル、ジム・モリソンの縁の地を訪れ、アート・ロックの世界に触れましょう。</p>
+                <div>
+                    <h3 style="text-align: center;">ジム・モリソンの壁画</h3>
+                    <p>ドアーズのボーカル、ジム・モリソンの縁の地を訪れ、アート・ロックの世界に触れましょう。</p>
+                </div>
             </div>
             <div class="additional-spots">
                 <h3>その他の訪問例</h3>
@@ -182,23 +203,23 @@
         
             <div class="recommendation-images">
                 <div class="recommendation-item">
-                    <img src="../topgun/トップガン.png" alt="トップガンのロケ地" class="recommendation-image">
-                    <p><a href="../topgun/index.html">『トップガン』</a></p>
+                    <img src="../doors/ドアーズ.png" alt="ドアーズの追悼ツアー" class="recommendation-image">
+                    <p><a href="../doors/index.html">ドアーズの追悼ツアー</a></p>
                 </div>
             
                 <div class="recommendation-item">
-                    <img src="../wildspeed/ワイルドスピード.png" alt="ワイルドスピードのロケ地" class="recommendation-image">
-                    <p><a href="../wildspeed/index.html">『ワイルドスピード』</a></p>
+                    <img src="../BeverlyHillsLocationTour/『ビバリーヒルズ高校＆青春白書』追悼ツアー.png" alt="『ビバリーヒルズ高校＆青春白書』" class="recommendation-image">
+                    <p><a href="../BeverlyHillsLocationTour/index.html">『ビバリーヒルズ高校<br>＆青春白書』</a></p>
                 </div>
             
                 <div class="recommendation-item">
-                    <img src="../backtothefuture/バックトゥザフューチャー.png" alt="バックトゥザフューチャーのロケ地" class="recommendation-image">
-                    <p><a href="../backtothefuture/index.html">『バックトゥザフューチャー』</a></p>
+                    <img src="../carpenters/カーペンターズ.png" alt="カーペンターズ" class="recommendation-image">
+                    <p><a href="../carpenters/index.html">カーペンターズ</a></p>
                 </div>
             
                 <div class="recommendation-item">
-                    <img src="../beverlyHillsCop/ビバリーヒルズ・コップ.png" alt="ビバリーヒルズ・コップのロケ地" class="recommendation-image">
-                    <p><a href="../beverlyHillsCop/index.html">『ビバリーヒルズ・コップ』</a></p>
+                    <img src="../michael_jackson/マイケルジャクソン.png" alt="マイケルジャクソンツアー" class="recommendation-image">
+                    <p><a href="../michael_jackson/index.html">マイケルジャクソンツアー</a></p>
                 </div>
             </div>
         </div>
@@ -209,12 +230,10 @@
             <p>お申し込みは<a href="contact.html">こちら</a>からお願いいたします。</p>
             <p>お得な情報はlineの公式アカウントからご確認できます</p>
             <a href="https://www.instagram.com/kazimai2010/?locale=ja_JP" target="_blank">
-                <img src="インスタグラムのアイコン.png" alt="Instagram" style="width: 50px; height: 50px;">
+                <img src="../インスタグラムのアイコン.png" alt="Instagram" style="width: 50px; height: 50px;">
             </a>
         </div>
                 
     </div>
-
-    <script src="BeverlyHillsLocation.js"></script>
 </body>
 </html>
