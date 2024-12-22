@@ -60,39 +60,29 @@
             border-radius: 5px; /* 角を丸くする */
         }
 
-        /* モーダルのスタイル */
-        .modal {
-            display: none; /* 初期は非表示 */
-            position: fixed; /* 固定位置 */
-            z-index: 1000; /* 他の要素の上に表示 */
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7); /* 背景を薄暗くする */
-            justify-content: center; /* 中央揃え */
-            align-items: center; /* 縦方向の中央揃え */
+        .spot {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 15px;
         }
 
-
-        .close-button {
-            position: absolute; /* モーダル内で位置を調整 */
-            top: 20px; /* 上からの位置 */
-            right: 30px; /* 右からの位置 */
-            background-color: transparent; /* 背景を透明に */
-            border: none; /* ボーダーを無効に */
-            color: white; /* ボタンの色 */
-            font-size: 30px; /* フォントサイズ */
-            cursor: pointer; /* クリック可能なカーソルに */
+        .spot img {
+            width: 40%;
+            border-radius: 8px;
+            margin-right: 20px;
         }
 
-        .arrow {
-            cursor: pointer; /* カーソルをポインターに変更 */
-            font-size: 30px; /* 矢印のサイズ */
-            font-weight: bold; /* 太文字にする */
-            margin: 0 20px; /* 左右にマージン */
-            user-select: none; /* 選択できないようにする */
-            vertical-align: middle; /* 縦位置を中央に調整 */
+        .spot h3 {
+            margin-top: 0;
+            color: #d14d72;
+        }
+
+        .additional-spots ul {
+            list-style: square;
+            margin: 0;
+            padding: 0;
+            padding-left: 20px;
         }
 
     </style>
@@ -122,37 +112,87 @@
             さあ、『ビバヒル』の世界に浸る特別な旅へ出かけましょう！
         </p>
 
-        <h2>ロケ地</h2>
-        <div class="modal" id="modal">
-            <button class="close-button" id="closeButton" onclick="closeModal()">✖</button>
-            <div class="arrow left-arrow" onclick="changeImage(-1, currentFlag)">&#9664;</div> <!-- 左矢印 -->
-            <div style="text-align: center; width:60%">
-                <img id="modalImage" style="width: 70%;" src="" alt="拡大画像">
-                <div id="imageDescription_west" style="display: none; color: white; text-align: center;">主人公のブランドンとブレンダ、ケリー、スティーブ、ディラン、ドナなどが通う高校。こちらも実際はビバリーヒルズにはなく、ロス郊外の高校を使用していた。</div> <!-- 固定の説明文 -->
-                <div id="imageDescription_beach" style="display: none; color: white; text-align: center;">ケリーやドナが暮らしたビーチアパート。このあたりは、ドラマOCなどでもよく使用されたビーチ沿いの高級住宅街の中にある。　他にもこの辺りはジェフ・ブリッジス主演の『カリブの熱い夜』などで、ジェームズ・ウッズが住んでいる家なども登場する。</div>
-                <div id="imageDescription_enniss" style="display: none; color: white; text-align: center;">ハリソン・フォード扮するリック・デッカードが住むアパートとして登場した建物。かの有名な建築家、フランク・ロイド・ライトが設計した有名な建物だ。</div>
+        <section id="spots">
+            <h2>訪問スポット</h2>
+            <div class="spot">
+                <img src="ビーチハウス.png" alt="ビーチハウス">
+                <div>
+                    <h3>ビーチハウス</h3>
+                    <p>
+                        ケリーやドナが暮らしたビーチアパート。このあたりは、ドラマOCなどでもよく使用されたビーチ沿いの高級住宅街の中にある。他にもこの辺りはジェフ・ブリッジス主演の『カリブの熱い夜』などで、ジェームズ・ウッズが住んでいる家なども登場する。
+                    </p>
+                </div>
             </div>
-            <div class="arrow right-arrow" id="right_arrow"onclick="changeImage(1, currentFlag)">&#9654;</div> <!-- 右矢印 -->
-        </div>
-        
-        
-        <!-- 画像をクリックしてモーダルを開く -->
-        <div style="display: flex; justify-content: center; align-items: center;">
-            <div style="text-align: center; margin-right: 20px;">
-                <p><strong>ウエストビバリーヒルズ高校</strong></p>
-                <img id="imageToHide" src="ウエストビバリーヒルズ高校1.png" alt="ウエストビバリーヒルズ高校.画像" onclick="openModal('ウエストビバリーヒルズ高校1.png', 'west')" style="width: 60%;">
+            <div class="spot">
+                <img src="ディランとブレンダが釣りをした桟橋.png" alt="ディランとブレンダが釣りをした桟橋">
+                <div>
+                    <h3>ディランとブレンダが釣りをした桟橋</h3>
+                    <p>
+                        第4シーズンでディランとブレンダが釣りをした桟橋です。ここもビーチ沿いの高級住宅街で、ロサンゼルス・レイカーズの選手やマリア・シャラポアなどの有名テニス選手など多くのセレブが住むとてもおしゃれで環境の良いところです
+                    </p>
+                </div>
             </div>
-            <div style="text-align: center;">
-                <p><strong>ビーチハウス</strong></p>
-                <img id="imageToShow" src="ビーチハウス.png" alt="ビーチハウスの画像" onclick="openModal('ビーチハウス.png', 'beach')" style="width: 60%;">
+            <div class="spot">
+                <img src="サンタモニカピア.png" alt="サンタモニカピア">
+                <div>
+                    <h3>サンタモニカピア</h3>
+                    <p>
+                        サンタモニカピアー第１シーズンの最終回第２３話「さらばビバリーヒルズ？！｣でブランドンとアンドレアがお別れデートをした場所。この桟橋の手前の左手にあるメリーゴーランドに二人は乗る。
+                    </p>
+                </div>
             </div>
-        </div>
+            <div class="spot">
+                <img src="UCLA ロイスホール.png" alt="UCLA ロイスホール">
+                <div>
+                    <h3>UCLA ロイスホール</h3>
+                    <p>
+                        シーズン１でブランドンとブレンダがここの入口のアリーを歩くシーンで使用された。他にも、構内には二人が本当の双子かを確かめるために訪れた双子研究所などとして使われた建物もある。
+                    </p>
+                </div>
+            </div>
+            <div class="spot">
+                <img src="ピーチピット初代.png" alt="ピーチピット初代">
+                <div>
+                    <h3>ピーチピット初代</h3>
+                    <p>
+                        ブランドンがバイトしていたピーチピットの初代として登場するお店。店内はシーズン1でもお馴染みの場所なので、入るとすぐに分かる。ここはハンバーガーがおいしいので、ツアー中のランチに最適の場所だ！
+                    </p>
+                </div>
+            </div>
+            <div class="spot">
+                <img src="ビバリーヒルズ高校.png" alt="ビバリーヒルズ高校">
+                <div>
+                    <h3>ビバリーヒルズ高校</h3>
+                    <p>
+                        ドラマのウエストビバリーヒルズ高校は現存しない架空の高校ですが、ビバリーヒルズ市内に入りますと、すぐ右手に本物のビバリーヒルズ高校があります。ここはニコラス・ケージやレニー・クラビッツが卒業した高校でも有名で、昔の映画『素晴らしき哉、我が人生！』でジェイムズ・ステュワートとドナ・ケリーが高校のダンスパーティでプールに落ちるシーンが撮影されている。
+                    </p>
+                </div>
+            </div>
+            <div class="spot">
+                <img src="ビバリーヒルズ・シティホール.png" alt="ビバリーヒルズ・シティホール">
+                <div>
+                    <h3>ビバリーヒルズ・シティホール</h3>
+                    <p>
+                        シーズン1で、アンドレアが試験勉強する図書館として登場するビバリーヒルズ市庁舎。他にも80年代に人気を博したエディー・マーフィー主演の映画『ビバリーヒルズ・コップ』シリーズでも警察署として登場する有名な建物。
+                    </p>
+                </div>
+            </div>
+            <div class="additional-spots">
+                <h3>その他の訪問スポット例</h3>
+                <ul>
+                    <li>ビバリーヒルズサイン</li>
+                    <li>ビバリーヒルズ・プレイハウス</li>
+                    <li>ビバリーヒルズホテル</li>
+                    <li>シーダーズ・サイナイ医療センター</li>
+                </ul>
+            </div>
+        </section>
         
 
         <div class="schedule-container">
     
             <h2>タイムスケジュール(例)</h2>
-            <p class="notice">あくまでサンプルですので、お客様のご要望に合わせて柔軟に対応いたします。<br>他のロケ地ツアーと併せてご案内することも可能ですので、何なりとお申し付けください。
+            <p class="notice">あくまでサンプルですので、お客様のご要望に合わせて柔軟に対応いたします。<br>ツアー料金：1時間$70×かかった時間+チップ15%
             <br>ツアー時間は5時間～8時間になります</p>
             <table>
                 <thead>
@@ -172,7 +212,7 @@
                     </tr>
                     <tr>
                         <td>11:00</td>
-                        <td>ワイスピのロケ地ツアー</td>
+                        <td>ビバリーヒルズ高校ツアー</td>
                         <td>ロサンゼルス</td>
                         <td>ワイスピのみならずLAの見所をご案内！！</td>
                     </tr>
@@ -184,7 +224,7 @@
                     </tr>
                     <tr>
                         <td>13:30</td>
-                        <td>ワイスピのロケ地ツアー</td>
+                        <td>ビバリーヒルズ高校ツアー</td>
                         <td>ロサンゼルス</td>
                         <td>午後も張り切って行きましょう💪</td>
                     </tr>
@@ -241,7 +281,5 @@
         </div>
                 
     </div>
-
-    <script src="BeverlyHillsLocation.js"></script>
 </body>
 </html>
