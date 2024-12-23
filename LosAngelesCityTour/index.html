@@ -60,46 +60,6 @@
             border-radius: 5px; /* 角を丸くする */
         }
 
-        /* モーダルのスタイル */
-        .modal {
-            display: none; /* 初期は非表示 */
-            position: fixed; /* 固定位置 */
-            z-index: 1000; /* 他の要素の上に表示 */
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7); /* 背景を薄暗くする */
-            justify-content: center; /* 中央揃え */
-            align-items: center; /* 縦方向の中央揃え */
-        }
-
-
-        .close-button {
-            position: absolute; /* モーダル内で位置を調整 */
-            top: 20px; /* 上からの位置 */
-            right: 30px; /* 右からの位置 */
-            background-color: transparent; /* 背景を透明に */
-            border: none; /* ボーダーを無効に */
-            color: white; /* ボタンの色 */
-            font-size: 30px; /* フォントサイズ */
-            cursor: pointer; /* クリック可能なカーソルに */
-        }
-
-        .arrow {
-            cursor: pointer; /* カーソルをポインターに変更 */
-            font-size: 30px; /* 矢印のサイズ */
-            font-weight: bold; /* 太文字にする */
-            margin: 0 20px; /* 左右にマージン */
-            user-select: none; /* 選択できないようにする */
-            vertical-align: middle; /* 縦位置を中央に調整 */
-        }
-        table {
-            width: 100%; /* テーブルの幅を100%に設定 */
-            border-collapse: collapse; /* 枠線を1本に統一 */
-            table-layout: fixed; /* 列幅を固定 */
-        }
-
         /* テーブルヘッダーのスタイル */
         th {
             text-align: left;
@@ -118,6 +78,22 @@
             vertical-align: top; /* テキストを上揃え */
             word-wrap: break-word; /* 長いテキストを折り返す */
         }
+
+        #courseSelector {
+            width: 200px; /* ボックスの幅を指定 */
+            height: 50px; /* ボックスの高さを指定 */
+            font-size: 18px; /* フォントサイズを大きく */
+            font-weight: bold; /* フォントを太字に */
+            color: #007bff; /* テキストの色 */
+            background-color: #f9f9f9; /* 背景色 */
+            border: 2px solid #007bff; /* ボーダー色 */
+            border-radius: 10px; /* 角を丸く */
+            padding: 5px 10px; /* 内側の余白を追加 */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* ボックスの影を追加 */
+            cursor: pointer; /* カーソルをポインターに変更 */
+            transition: all 0.3s ease; /* ホバー時のアニメーション */
+        }
+
     </style>
 </head>
 <body>
@@ -143,8 +119,11 @@
         
 
         <div class="schedule-container">
-    
-            <h2>タイムスケジュール(8時間)</h2>
+            <select id="courseSelector" onchange="updateSchedule()">
+                <option value="8hours">8時間コース</option>
+                <option value="10hours">10時間コース</option>
+            </select>
+            <h2>タイムスケジュール</h2>
             <p class="notice">最小催行人数：4名様から<br>料金：お1人様8時間コース140ドル、10時間コース175ドル</p>
             <table>
                 <thead>
@@ -154,7 +133,7 @@
                         <th>詳細</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="scheduleContent">
                     <tr>
                         <td>09:00</td>
                         <td>ホテルで待ち合わせ</td>
@@ -227,6 +206,46 @@
                     </tr>
                 </tbody>
             </table>
+            <div id="scheduleData" style="display: none;">
+                <!-- 8時間コース -->
+                <div data-course="8hours">
+                    <div data-time="09:00" data-place="ホテルで待ち合わせ" data-details="快適な旅のスタート！宿泊ホテルにお迎えします。"></div>
+                    <div data-time="10:00~10:30" data-place="マリナ・デル･レイ" data-details="ヨットがずらり！セレブ気分を味わえる高級住宅街。"></div>
+                    <div data-time="10:30~11:00" data-place="ベニス・ビーチ" data-details="運河とスケボー！ここが活気あふれるカルフォルニアの象徴。"></div>
+                    <div data-time="11:00~11:30" data-place="サンタモニカ" data-details="映画好き必見！「フォレスト・ガンプ」の名シーンを再現。"></div>
+                    <div data-time="11:30~12:00" data-place="センチュリー・シティ" data-details="映画「ダイ・ハード」の舞台！超近代的な街並みを満喫。"></div>
+                    <div data-time="12:00~12:30" data-place="ビバリーヒルズ" data-details="有名人の豪邸が目白押し！映画のような世界を体験。"></div>
+                    <div data-time="12:30~13:00" data-place="ウエスト・ハリウッド" data-details="ライブハウスの聖地！音楽好きならたまらないエリア。"></div>
+                    <div data-time="13:00~13:30" data-place="チャイニーズ・シアター" data-details="ハリウッドスターの手形・足形を間近で見る感動体験！"></div>
+                    <div data-time="13:30~14:00" data-place="「あなたがスター」壁画" data-details="自分がスター気分に！写真映え間違いなしの名所。"></div>
+                    <div data-time="14:00~14:30" data-place="ハリウッド･サイン" data-details="これぞハリウッド！写真に収める絶好のチャンス。"></div>
+                    <div data-time="14:30~15:00" data-place="ドジャースタジアム" data-details="メジャーリーグの聖地！球場の全景に圧倒されます。"></div>
+                    <div data-time="15:00~15:30" data-place="ダウンタウン" data-details="ロスの心臓部！摩天楼と活気に満ちた街並みを堪能。"></div>
+                    <div data-time="15:30~16:30" data-place="リトル東京" data-details="日系文化を体験！懐かしさと新しさが共存する街。"></div>
+                    <div data-time="17:00" data-place="ご宿泊のホテル" data-details="楽しい一日の終わり。お疲れ様でした！"></div>
+                </div>
+            
+                <!-- 10時間コース -->
+                <div data-course="10hours">
+                    <div data-time="09:00" data-place="各ホテルお迎え" data-details="ホテルでお迎え。今日は特別な一日の始まり！"></div>
+                    <div data-time="09:30" data-place="マリナ・デル･レイ" data-details="ヨットの数にびっくり！高級感あふれる景色を堪能。"></div>
+                    <div data-time="09:45~10:00" data-place="ベニス・ビーチ" data-details="運河沿いでリラックス。大道芸人にも注目です。"></div>
+                    <div data-time="10:15~10:30" data-place="サンタモニカ" data-details="桟橋で映画のワンシーンを再現！海風が心地いい。"></div>
+                    <div data-time="11:00" data-place="センチュリー・シティ" data-details="20世紀フォックスの聖地。映画ファンにはたまらない！"></div>
+                    <div data-time="11:15~11:45" data-place="ビバリーヒルズ" data-details="超豪華な街並み！映画「プリティウーマン」の世界へ。"></div>
+                    <div data-time="12:00~12:30" data-place="ロバートソン・ブルバード" data-details="セレブ御用達の通り。ここでお買い物はいかが？"></div>
+                    <div data-time="12:30~13:30" data-place="ビバリー・センター" data-details="巨大モールでショッピング。見て回るだけでも楽しい！"></div>
+                    <div data-time="13:45~14:45" data-place="ファーマーズ・マーケット&グローブ" data-details="新鮮な食材とおしゃれなお店がいっぱい！ランチにも最適。"></div>
+                    <div data-time="15:00~15:30" data-place="メルローズ・アヴェニュー" data-details="トレンド発信地。セレブやおしゃれな若者に遭遇するかも？"></div>
+                    <div data-time="15:45~16:15" data-place="チャイニーズ・シアター、スターの手形・足型、コダック･シアター" data-details="ハリウッドらしさ満点！有名スポットをじっくり観光。"></div>
+                    <div data-time="16:25~16:30" data-place="「あなたがスター」壁画" data-details="一枚は撮りたい！ハリウッドらしい名物壁画です。"></div>
+                    <div data-time="16:45~16:55" data-place="ハリウッド･サイン" data-details="ハリウッド観光のハイライト。写真撮影の絶好ポイント！"></div>
+                    <div data-time="17:25" data-place="ダウンタウン" data-details="都会の魅力たっぷり！夜景も見逃せないスポットです。"></div>
+                    <div data-time="17:30~18:00" data-place="リトル東京" data-details="日本の味と文化を堪能。ほっと一息つける場所です。"></div>
+                    <div data-time="18:00~19:00" data-place="各ホテル着" data-details="1日お疲れ様でした！素敵な思い出を胸にホテルへ。"></div>
+                </div>
+            </div>
+            
         </div>
 
         <div class="recommendations">
@@ -267,6 +286,6 @@
                 
     </div>
 
-    <script src="starwars.js"></script>
+    <script src="LosAngelesCityTour.js"></script>
 </body>
 </html>
