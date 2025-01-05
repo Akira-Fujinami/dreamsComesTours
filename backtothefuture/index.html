@@ -64,6 +64,27 @@
             user-select: none; /* 選択できないようにする */
             vertical-align: middle; /* 縦位置を中央に調整 */
         }
+
+        .image-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .image-container:hover::after {
+            content: "クリックすると詳細が表示されます";
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8em;
+            white-space: nowrap;
+            z-index: 1000;
+        }
+
     </style>
 </head>
 <body>
@@ -101,22 +122,83 @@
                 <img id="modalImage" style="width: 70%;" src="" alt="拡大画像">
                 <div id="imageDescription_mac" style="display: none; color: white; text-align: center;">1985年にマーティ・マクフライ（マイケル・J・フォックス）が住んでいる家として登場した家。<br>一度住人の方とお話しさせていただいたとき、当時撮影後マイケル・J・フォックスが住人の方の家族と一緒に『ファミリータイズ』を居間のテレビで一緒に見たと言っていました。当時から隣に住んでいる年配の女性が当時の写真をコピーしたものをいつも訪問客に下さり、親切にしてくれます。今この家の値段は日本円で1億円以上するそうです。</div> <!-- 固定の説明文 -->
                 <div id="imageDescription_liyon" style="display: none; color: white; text-align: center;">1985年のリヨン団地のゲートがあった場所です。</div>
+                <div id="imageDescription_battle" style="display: none; color: white; text-align: center;">マーティー・マクフライ（マイケル・J・フォックス）がバトル・オブ・ザ・バンドのオーディションを受けた時の会場の体育館です。</div>
+                <div id="imageDescription_skate" style="display: none; color: white; text-align: center;">『バック・トゥ・ザ・フューチャー』パート１の冒頭、ドクに電話で起こされたマーティー・マクフライがスケボーでドクの家のガレージから出てきて、バーガーキングのテイクアウトをしたトラックの後ろにつかまって学校に行くシーンです。</div>
+                <div id="imageDescription_doc" style="display: none; color: white; text-align: center;">この家はドクの家として主に、内装が使用されました。<br>マーティが玄関をノックするシーンもこの家の玄関になります。</div>
+                <div id="imageDescription_hill" style="display: none; color: white; text-align: center;">この学校は、ヒル・ヴァレー高校としてロケに使用されました。</div>
+                <div id="imageDescription_twin" style="display: none; color: white; text-align: center;">マーティとドクがデロリアンで過去にタイムスリップする実験を行ったショッピングモールの駐車場です。実験中、リビア人のテロリストが来て、ドクを射殺してしまうシーン。<br>実際には、ドクは防弾チョッキを着ていて無事でした。</div>
+                <div id="imageDescription_party" style="display: none; color: white; text-align: center;">BTTF１と２の「エンチャントメント・アンダー・ザ・シー」のシーンでマイケル・J・フォックスがチャック・ベリーの「ジョニー・B・グッド」を演奏するシーンがこの体育館で撮影されました。日曜日なら館内を見学できるようにアレンジすることもできます。お問い合わせください。</div>
             </div>
             <div class="arrow right-arrow" id="right_arrow"onclick="changeImage(1, currentFlag)">&#9654;</div> <!-- 右矢印 -->
         </div>
         
         
         <!-- 画像をクリックしてモーダルを開く -->
-        <div style="display: flex; justify-content: center; align-items: center;">
-            <div style="text-align: center; margin-right: 20px;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 20px;">
+            <div class="image-container" style="cursor: pointer; text-align: center; flex: 1 1 calc(50% - 20px);">
                 <p><strong>1985年のマクフライ家</strong></p>
-                <img id="imageToHide" src="マクフライ家.png" alt="マクフライ家の画像" onclick="openModal('マクフライ家.png', 'mac')" style="width: 80%;">
+                <img id="imageToHide" src="マクフライ家.png" alt="マクフライ家の画像" onclick="openModal('マクフライ家.png', 'mac')" style="width: 100%; max-width: 300px; border-radius: 10px;">
             </div>
-            <div style="text-align: center;">
+            <div class="image-container" style="cursor: pointer; text-align: center; flex: 1 1 calc(50% - 20px);">
                 <p><strong>1985年のリヨン団地のゲートがあった場所</strong></p>
-                <img id="imageToShow" src="リヨン団地.png" alt="別のロケ地の画像" onclick="openModal('リヨン団地.png', 'liyon')" style="width: 80%;">
+                <img id="imageToShow" src="リヨン団地.png" alt="別のロケ地の画像" onclick="openModal('リヨン団地.png', 'liyon')" style="width: 100%; max-width: 300px; border-radius: 10px;">
+            </div>
+            <div class="image-container" style="cursor: pointer; text-align: center; flex: 1 1 calc(50% - 20px);">
+                <p><strong>バトル・オブ・ザ・バンドのオーディション会場</strong></p>
+                <img id="imageToShow" src="バトル・オブ・ザ・バンドのオーディション会場.png" alt="バトル・オブ・ザ・バンドのオーディション会場" onclick="openModal('バトル・オブ・ザ・バンドのオーディション会場.png', 'battle')" style="width: 100%; max-width: 300px; border-radius: 10px;">
+            </div>
+            <div class="image-container" style="cursor: pointer; text-align: center; flex: 1 1 calc(50% - 20px);">
+                <p><strong>オープニングでマーティがスケボで出てきたシーン</strong></p>
+                <img id="imageToShow" src="オープニングでマーティが出てきたシーン.png" alt="オープニングでマーティが出てきたシーン" onclick="openModal('オープニングでマーティが出てきたシーン.png', 'skate')" style="width: 100%; max-width: 300px; border-radius: 10px;">
+            </div>
+            <div class="image-container" style="cursor: pointer; text-align: center; flex: 1 1 calc(50% - 20px);">
+                <p><strong>ドクの家の内装のシーンが撮られた家</strong></p>
+                <img id="imageToShow" src="ドクの家の内装のシーンが撮られた家.png" alt="ドクの家の内装のシーンが撮られた家" onclick="openModal('ドクの家の内装のシーンが撮られた家.png', 'doc')" style="width: 100%; max-width: 300px; border-radius: 10px;">
+            </div>
+            <div class="image-container" style="cursor: pointer; text-align: center; flex: 1 1 calc(50% - 20px);">
+                <p><strong>ヒルバレー高校</strong></p>
+                <img id="imageToShow" src="ヒルバレー高校.png" alt="ヒルバレー高校" onclick="openModal('ヒルバレー高校.png', 'hill')" style="width: 100%; max-width: 300px; border-radius: 10px;">
+            </div>
+            <div class="image-container" style="cursor: pointer; text-align: center; flex: 1 1 calc(50% - 20px);">
+                <p><strong>ツインパインモール</strong></p>
+                <img id="imageToShow" src="ツインパインモール.png" alt="ツインパインモール" onclick="openModal('ツインパインモール.png', 'twin')" style="width: 100%; max-width: 300px; border-radius: 10px;">
+            </div>
+            <div class="image-container" style="cursor: pointer; text-align: center; flex: 1 1 calc(50% - 20px);">
+                <p><strong>魅惑の深海パーティが撮影された所</strong></p>
+                <img id="imageToShow" src="魅惑の深海パーティが撮影された所.png" alt="魅惑の深海パーティが撮影された所" onclick="openModal('魅惑の深海パーティが撮影された所.png', 'party')" style="width: 100%; max-width: 300px; border-radius: 10px;">
             </div>
         </div>
+        <div class="additional-spots" style=" padding: 40px 20px; margin-top: 30px;">
+            <h2 style=" margin-bottom: 30px;">他のロケ地スポット</h2>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+                <div style="flex: 1 1 calc(33% - 20px); background: white; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); overflow: hidden; text-align: center; padding: 10px;">
+                    <img src="初代ジェニファー・パーカー役のクラウディア・ウェルズさんのお店.png" alt="初代ジェニファー・パーカー役のクラウディア・ウェルズさんのお店" style="width: 100%; max-width: 300px; border-radius: 10px;">
+                    <p><strong>初代ジェニファー・パーカー役のクラウディア・ウェルズさんのお店</strong></p>
+                </div>
+                <div style="flex: 1 1 calc(33% - 20px); background: white; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); overflow: hidden; text-align: center; padding: 10px;">
+                    <img src="BTTFパートⅢで出てきた踏切や道路.png" alt="BTTFパートⅢで出てきた踏切や道路" style="width: 100%; max-width: 300px; border-radius: 10px;">
+                    <p><strong>BTTFパートⅢで出てきた踏切や道路</strong></p>
+                </div>
+                <div style="flex: 1 1 calc(33% - 20px); background: white; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); overflow: hidden; text-align: center; padding: 10px;">
+                    <img src="スタート・ライン.png" alt="スタート・ライン" style="width: 100%; max-width: 300px; border-radius: 10px;">
+                    <p><strong>スタート・ライン</strong></p>
+                    <p style="font-size: 0.9em; color: #555;">マーティーが1985年に戻るためにデロリアンに乗って時計台のところまで助走を始めた場所。グリフィス公園内にあります。</p>
+                </div>
+                <div style="flex: 1 1 calc(33% - 20px); background: white; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); overflow: hidden; text-align: center; padding: 10px;">
+                    <img src="リバーロード・トンネル.png" alt="リバーロード・トンネル" style="width: 100%; max-width: 300px; border-radius: 10px;">
+                    <p><strong>リバーロード・トンネル</strong></p>
+                    <p style="font-size: 0.9em; color: #555;">『バック・トゥ・ザ・フューチャーPART２』でビフに奪われたスポーツ年鑑誌を奪い返そうとして、ビフのオープンカーの横にホバーボードで近づいて格闘したトンネルです。</p>
+                </div>
+                <div style="flex: 1 1 calc(33% - 20px); background: white; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); overflow: hidden; text-align: center; padding: 10px;">
+                    <img src="スティーブン・スピルバーグ監督の手形、足型、直筆のサイン.png" alt="スティーブン・スピルバーグ監督の手形、足型、直筆のサイン" style="width: 100%; max-width: 300px; border-radius: 10px;">
+                    <p><strong>スティーブン・スピルバーグ監督の手形、足型、直筆のサイン</strong></p>
+                </div>
+                <div style="flex: 1 1 calc(33% - 20px); background: white; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); overflow: hidden; text-align: center; padding: 10px;">
+                    <img src="1955年のロレイン・ベインズの家.png" alt="1955年のロレイン・ベインズの家" style="width: 100%; max-width: 300px; border-radius: 10px;">
+                    <p><strong>マーティの母親ロレイン・ベインズ（リー・トンプソン）が住んでいた家</strong></p>
+                </div>
+            </div>
+        </div>          
         
 
         <div class="schedule-container">
@@ -142,7 +224,7 @@
                     </tr>
                     <tr>
                         <td>11:00</td>
-                        <td>ワイスピのロケ地ツアー</td>
+                        <td>『バックトゥザフューチャー』のロケ地ツアー</td>
                         <td>ロサンゼルス</td>
                         <td>ワイスピのみならずLAの見所をご案内！！</td>
                     </tr>
@@ -154,7 +236,7 @@
                     </tr>
                     <tr>
                         <td>13:30</td>
-                        <td>ワイスピのロケ地ツアー</td>
+                        <td>『バックトゥザフューチャー』のロケ地ツアー</td>
                         <td>ロサンゼルス</td>
                         <td>午後も張り切って行きましょう💪</td>
                     </tr>
@@ -206,12 +288,12 @@
             <p>お申し込みは<a href="contact.html">こちら</a>からお願いいたします。</p>
             <p>お得な情報はlineの公式アカウントからご確認できます</p>
             <a href="https://www.instagram.com/kazimai2010/?locale=ja_JP" target="_blank">
-                <img src="インスタグラムのアイコン.png" alt="Instagram" style="width: 50px; height: 50px;">
+                <img src="../インスタグラムのアイコン.png" alt="Instagram" style="width: 50px; height: 50px;">
             </a>
         </div>
                 
     </div>
 
-    <script src="script.js"></script>
+    <script src="backToTheFuture.js"></script>
 </body>
 </html>

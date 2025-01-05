@@ -56,13 +56,24 @@
             cursor: pointer; /* クリック可能なカーソルに */
         }
 
-        .arrow {
-            cursor: pointer; /* カーソルをポインターに変更 */
-            font-size: 30px; /* 矢印のサイズ */
-            font-weight: bold; /* 太文字にする */
-            margin: 0 20px; /* 左右にマージン */
-            user-select: none; /* 選択できないようにする */
-            vertical-align: middle; /* 縦位置を中央に調整 */
+        .image-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .image-container:hover::after {
+            content: "クリックすると詳細が表示されます";
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8em;
+            white-space: nowrap;
+            z-index: 1000;
         }
 
     </style>
@@ -92,30 +103,24 @@
         <h2>ロケ地</h2>
         <div class="modal" id="modal">
             <button class="close-button" id="closeButton" onclick="closeModal()">✖</button>
-            <div class="arrow left-arrow" onclick="changeImage(-1, currentFlag)">&#9664;</div> <!-- 左矢印 -->
             <div style="text-align: center; width:60%">
                 <img id="modalImage" style="width: 70%;" src="" alt="拡大画像">
                 <div id="imageDescription_tret" style="display: none; color: white; text-align: center;">ポール・ウォーカーが後から来た４人の中の一人、ヴィンスと喧嘩した場所。<br>ドミニク・トレト（ヴィン・ディーゼル）と彼の妹がここでハンバーガー屋を営んでいた。</div> <!-- 固定の説明文 -->
                 <div id="imageDescription_dominiq" style="display: none; color: white; text-align: center;">このバイカーやサーファーの溜まり場的な店は、キアヌ・リーブスとパトリック・スウェイジー共演の『ハートブルー』でロケ地として使用されたり、ロバート・ダウニーJr主演の『アイアンマン3』でもスタジオとして作りかえられました。</div>
                 <div id="imageDescription_enniss" style="display: none; color: white; text-align: center;">ハリソン・フォード扮するリック・デッカードが住むアパートとして登場した建物。かの有名な建築家、フランク・ロイド・ライトが設計した有名な建物だ。</div>
             </div>
-            <div class="arrow right-arrow" id="right_arrow"onclick="changeImage(1, currentFlag)">&#9654;</div> <!-- 右矢印 -->
         </div>
         
         
         <!-- 画像をクリックしてモーダルを開く -->
-        <div style="display: flex; justify-content: center; align-items: center;">
-            <div style="text-align: center; margin-right: 20px;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 20px;">
+            <div class="image-container" style="cursor: pointer; text-align: center; flex: 1 1 calc(50% - 20px);">
                 <p><strong>トレトのマーケット</strong></p>
                 <img id="imageToHide" src="トレトのマーケット.png" alt="トレトのマーケットの画像" onclick="openModal('トレトのマーケット.png', 'tret')" style="width: 70%;">
             </div>
-            <div style="text-align: center;">
+            <div class="image-container" style="cursor: pointer; text-align: center; flex: 1 1 calc(50% - 20px);">
                 <p><strong>オコーナーとドミニクが立ち寄ったお店</strong></p>
                 <img id="imageToShow" src="オコーナーとドミニクが立ち寄ったお店.png" alt="オコーナーとドミニクが立ち寄ったお店の画像" onclick="openModal('オコーナーとドミニクが立ち寄ったお店.png', 'dominiq')" style="width: 80%;">
-            </div>
-            <div style="text-align: center;">
-                <p><strong>エニスハウス</strong></p>
-                <img id="imageToShow" src="エニスハウス.png" alt="エニスハウスの画像" onclick="openModal('エニスハウス.png', 'enniss')" style="width: 80%;">
             </div>
         </div>
 
@@ -206,7 +211,7 @@
             <p>お申し込みは<a href="contact.html">こちら</a>からお願いいたします。</p>
             <p>お得な情報はlineの公式アカウントからご確認できます</p>
             <a href="https://www.instagram.com/kazimai2010/?locale=ja_JP" target="_blank">
-                <img src="インスタグラムのアイコン.png" alt="Instagram" style="width: 50px; height: 50px;">
+                <img src="../インスタグラムのアイコン.png" alt="Instagram" style="width: 50px; height: 50px;">
             </a>
         </div>
                 
